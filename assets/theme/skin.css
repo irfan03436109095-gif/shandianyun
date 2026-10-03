@@ -77,7 +77,6 @@
 .silu-page .silu-regions { max-width: 960px; margin: 48px auto 0; }
 .region-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .region-card { position: relative; display: flex; align-items: center; min-height: 76px; min-width: 0; gap: 12px; padding: 15px 17px; background: var(--glass); border: 1px solid var(--line); border-radius: 13px; box-shadow: var(--shadow); transition: border-color .18s ease, transform .18s ease; }
-a.region-card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .region-icon { display: grid; flex-shrink: 0; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--accent); font-size: 16px; font-weight: 650; }
 .region-card:nth-child(3n + 2) .region-icon { color: var(--secondary); }
 .region-card > div { flex: 1; min-width: 0; }
@@ -312,5 +311,5 @@ a.region-card:hover { border-color: var(--accent); transform: translateY(-2px); 
   :root[data-theme="silu-cloud"] { scroll-behavior: auto; }
   .silu-page .page-scroll, .silu-page .article-scroll { scroll-behavior: auto; }
   .silu-page a, .silu-button, .region-card { transition: none; }
-  .silu-button:hover, a.region-card:hover { transform: none; }
+  .silu-button:hover { transform: none; }
 }
