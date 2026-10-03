@@ -75,15 +75,7 @@
 <section class="silu-regions" aria-label="地区连接">
 <div class="region-grid">
 
-<div class="region-card region-pending"><span class="region-icon" aria-hidden="true">港</span><div><h3>中国香港</h3><p>距离大陆 低延迟</p></div><span class="region-dot" aria-hidden="true"></span></div>
-<div class="region-card region-pending"><span class="region-icon" aria-hidden="true">台</span><div><h3>中国台湾</h3><p>动漫解锁 稳定推荐</p></div><span class="region-dot" aria-hidden="true"></span></div>
-<div class="region-card region-pending"><span class="region-icon" aria-hidden="true">日</span><div><h3>日本东京</h3><p>游戏加速 极速响应</p></div><span class="region-dot" aria-hidden="true"></span></div>
-<div class="region-card region-pending"><span class="region-icon" aria-hidden="true">美</span><div><h3>美国洛杉矶</h3><p>原生IP AI全解锁</p></div><span class="region-dot" aria-hidden="true"></span></div>
-<div class="region-card region-pending"><span class="region-icon" aria-hidden="true">新</span><div><h3>新加坡</h3><p>跨境电商 业务首选</p></div><span class="region-dot" aria-hidden="true"></span></div>
-<div class="region-card region-pending"><span class="region-icon" aria-hidden="true">韩</span><div><h3>韩国首尔</h3><p>流媒体解锁优化</p></div><span class="region-dot" aria-hidden="true"></span></div>
-<div class="region-card region-pending"><span class="region-icon" aria-hidden="true">加</span><div><h3>加拿大</h3><p>低成本 大带宽</p></div><span class="region-dot" aria-hidden="true"></span></div>
-<div class="region-card region-pending"><span class="region-icon" aria-hidden="true">德</span><div><h3>德国法兰克福</h3><p>欧洲枢纽 稳定传输</p></div><span class="region-dot" aria-hidden="true"></span></div>
-<div class="region-card region-pending"><span class="region-icon" aria-hidden="true">印</span><div><h3>印度尼西亚</h3><p>东南亚本土 极速路由</p></div><span class="region-dot" aria-hidden="true"></span></div>
+<a class="region-card" href="https://www.shandianyun.org/categories/speed-troubleshooting/"><span class="region-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5z"/></svg></span><div><h3>测速与排障</h3><p>3 篇公开内容</p></div><span class="region-dot" aria-hidden="true"></span></a><a class="region-card" href="https://www.shandianyun.org/categories/subscription-configuration/"><span class="region-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5z"/></svg></span><div><h3>订阅与配置</h3><p>2 篇公开内容</p></div><span class="region-dot" aria-hidden="true"></span></a><a class="region-card" href="https://www.shandianyun.org/categories/proxy-client-tutorials/"><span class="region-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5z"/></svg></span><div><h3>客户端教程</h3><p>3 篇公开内容</p></div><span class="region-dot" aria-hidden="true"></span></a><a class="region-card" href="https://www.shandianyun.org/categories/airport-basics-buying/"><span class="region-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5z"/></svg></span><div><h3>入门与选购</h3><p>2 篇公开内容</p></div><span class="region-dot" aria-hidden="true"></span></a>
 
 </div>
 </section>
@@ -158,7 +150,17 @@
 <dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
 <header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
 <div class="reader-dialog-body">
-<div class="empty"><h3>还没有可搜索的文章</h3><p>文章发布后，可以在这里搜索标题和正文。</p></div>
+
+<div id="site-search-ui" data-module="https://www.shandianyun.org/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.shandianyun.org/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.shandianyun.org/pagefind/" base-url="https://www.shandianyun.org/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
 </div>
 </dialog>
 

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="silu-cloud">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DNS、Fake-IP 与 IPv6 排查教程：节点在线却打不开网页怎么办 · 闪电云</title>
+<meta name="description" content="解释域名解析、节点入口和目标服务三条链路，介绍 Fake-IP 映射、系统查询的局限、IPv6 对照测试和修改 DNS 时的恢复原则。">
+<meta name="keywords" content="机场DNS排查,Fake-IP,IPv6代理,DNS解析失败,节点在线网页打不开">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.shandianyun.org/posts/airport-dns-fake-ip-ipv6-troubleshooting/">
+<meta property="og:title" content="DNS、Fake-IP 与 IPv6 排查教程：节点在线却打不开网页怎么办">
+<meta property="og:description" content="解释域名解析、节点入口和目标服务三条链路，介绍 Fake-IP 映射、系统查询的局限、IPv6 对照测试和修改 DNS 时的恢复原则。">
+<meta property="og:url" content="https://www.shandianyun.org/posts/airport-dns-fake-ip-ipv6-troubleshooting/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="闪电云">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png"><meta property="og:image:alt" content="闪电云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DNS、Fake-IP 与 IPv6 排查教程：节点在线却打不开网页怎么办">
+<meta name="twitter:description" content="解释域名解析、节点入口和目标服务三条链路，介绍 Fake-IP 映射、系统查询的局限、IPv6 对照测试和修改 DNS 时的恢复原则。">
+<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png">
+<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-04T00:25:14&#43;08:00"><meta property="article:modified_time" content="2026-10-04T00:25:44&#43;08:00"><meta property="article:tag" content="故障排查"><meta property="article:tag" content="DNS">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.shandianyun.org/posts/airport-dns-fake-ip-ipv6-troubleshooting/#article","@type":"BlogPosting","author":{"@type":"Person","name":"闪电云"},"dateModified":"2026-10-04T00:25:44+08:00","datePublished":"2026-10-04T00:25:14+08:00","description":"解释域名解析、节点入口和目标服务三条链路，介绍 Fake-IP 映射、系统查询的局限、IPv6 对照测试和修改 DNS 时的恢复原则。","headline":"DNS、Fake-IP 与 IPv6 排查教程：节点在线却打不开网页怎么办","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.shandianyun.org/posts/airport-dns-fake-ip-ipv6-troubleshooting/","@type":"WebPage"},"url":"https://www.shandianyun.org/posts/airport-dns-fake-ip-ipv6-troubleshooting/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.shandianyun.org/","name":"闪电云","position":1},{"@type":"ListItem","item":"https://www.shandianyun.org/posts/airport-dns-fake-ip-ipv6-troubleshooting/","name":"DNS、Fake-IP 与 IPv6 排查教程：节点在线却打不开网页怎么办","position":2}]}]}</script>
+
+<script>(()=>{let mode='light';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/style.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/search.css"><script defer src="https://www.shandianyun.org/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/skin.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/reader.css">
+<link rel="icon" href="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/artalk.css"><script defer src="https://www.shandianyun.org/assets/theme/artalk.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/theme.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/reader.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/viewer.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://www.shandianyun.org/assets/theme/interactions.js"></script>
+
+
+
+</head>
+
+<body class="reader-page silu-page article-page">
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header silu-header"><div class="header-inner">
+<a class="brand" href="https://www.shandianyun.org/"><img src="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png" alt="" width="40" height="40"><span>闪电云</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://www.shandianyun.org/">首页</a><a href="https://www.shandianyun.org/#service-plans">服务方案</a></nav>
+<a class="search-toggle" href="https://www.shandianyun.org/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮"><svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单"><svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+</div></header>
+
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell silu-shell article-shell" data-has-toc="true">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云</a></li><li><span aria-current="page">DNS、Fake-IP 与 IPv6 排查教程：节点在线却打不开网页怎么办</span></li></ol></nav>
+
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>文章详情</div>
+<h1 data-pagefind-meta="title">DNS、Fake-IP 与 IPv6 排查教程：节点在线却打不开网页怎么办</h1>
+<div class="metadata" data-pagefind-ignore><span>闪电云</span><time datetime="2026-10-04T00:25:14&#43;08:00">2026-10-04</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://www.shandianyun.org/categories/speed-troubleshooting/">测速与排障</a></div>
+</header>
+<div class="prose"><p>节点延迟看起来正常，但打开网页一直转圈，原因可能在域名解析、分流、节点到目标服务的路径，也可能在应用自身。不要立即把所有 DNS 改成一份网上配置，先分清失败发生在哪一段。</p>
+<h2 id="heading">一个域名，需要经过哪些环节</h2>
+<p>DNS 的基础作用是把名称解析为地址。代理场景中，还要区分用于解析节点入口域名的 DNS，以及用于处理目标网站域名的 DNS。<a href="https://developer.mozilla.org/en-US/docs/Glossary/DNS">参考：MDN DNS 说明</a></p>
+<p>可以把问题拆成三条链路：</p>
+<table>
+<thead>
+<tr>
+<th>链路</th>
+<th>要核对的内容</th>
+<th>常见线索</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>域名解析</td>
+<td>目标名称或节点名称能否按预期解析</td>
+<td>DNS 错误、超时、空结果</td>
+</tr>
+<tr>
+<td>节点入口连接</td>
+<td>设备能否连上选中的代理节点</td>
+<td>拨号、握手、认证或连接超时</td>
+</tr>
+<tr>
+<td>目标服务请求</td>
+<td>已选出口能否完成对应请求</td>
+<td>请求失败、服务端错误、应用异常</td>
+</tr>
+</tbody>
+</table>
+<p>客户端的延迟测试通常针对一个测试目标，不能替代所有目标服务的验证。</p>
+<p><img src="https://www.shandianyun.org/assets/media/39035b8b-02f1-4c94-87a0-1a763dd87a41.png" alt="域名解析、代理节点连接和目标请求三条链路"></p>
+<h2 id="fake-ip-">Fake-IP 为什么不是网站真实地址</h2>
+<p>在 Fake-IP 模式下，核心可以向应用提供一个映射地址，并保留它与域名的关系，后续按域名和配置处理连接。因此，在此类配置下看见映射网段，不应立即认为网站地址错误。</p>
+<p>mihomo 的 DNS 文档提供 fake-ip 与 redir-host 模式，并单独说明节点域名解析、直接出站解析和过滤设置。<a href="https://wiki.metacubex.one/en/config/dns/">参考：mihomo DNS 配置</a></p>
+<p>某些应用、局域网设备或特定解析流程可能需要过滤处理。修改过滤项前，先确认是哪个域名和哪个应用异常，只对已经定位的问题作小范围调整。把所有域名都加入过滤，可能改变原本可用的配置行为。</p>
+<h2 id="heading-1">先记录，再查询</h2>
+<p>排查前保存当前配置，记录客户端版本、节点、网络类型、目标域名及失败时间。重新发起一次请求，并查看同时出现的日志。</p>
+<p>Windows 可以使用系统查询作辅助对照：</p>
+<pre><code class="language-text">nslookup example.com
+</code></pre>
+<p>这里的域名仅为命令示例，实际应换成需要排查且有权访问的目标。系统查询的成功或失败只能说明它采用的解析路径；客户端内部 DNS、浏览器加密 DNS或远端解析可能走不同路径。</p>
+<p>同理，浏览器开着安全 DNS 时，结果可能不等于系统查询。核对设置时记录原状态，一次只做一项对照，不要同时更换浏览器 DNS、系统 DNS 和客户端 DNS。</p>
+<h2 id="ipv6-">IPv6 排查，要分清三个层面</h2>
+<p>设备有 IPv6 地址、DNS 返回 AAAA 记录、代理核心实际接收 IPv6 流量，是三件不同的事。以 mihomo 为例，DNS 配置里的 ipv6 开关主要影响 AAAA 解析响应；完整路由和 TUN 接管还需要看其他配置，不能把一个开关等同于全机 IPv6 行为。<a href="https://wiki.metacubex.one/en/config/dns/">参考：DNS IPv6 设置</a>；<a href="https://wiki.metacubex.one/config/inbound/tun/">TUN IPv6 配置</a></p>
+<p>若怀疑 IPv6 路径不通，先保存原状态，用客户端支持的设置做一次受控对照，再重复同一请求。结果改善后，还需要确认到底是解析、路由还是远端支持的问题，不能直接宣称“IPv6 都不能用”。</p>
+<p>验证结束恢复无关改动。能稳定使用的完整配置，应当有明确的解析与路由逻辑，而不是长期依赖随机开关组合。</p>
+<h2 id="heading-2">一个实用的排查顺序</h2>
+<ol>
+<li>不改配置，查看目标请求有没有进入客户端。</li>
+<li>查看是否存在 DNS 报错，区分节点域名和目标域名。</li>
+<li>核对目标命中的规则及实际节点。</li>
+<li>换一个已知可用节点，保持其他条件不变。</li>
+<li>换网络进行必要对照，再检查浏览器独立 DNS 设置。</li>
+<li>有明确证据时，再调整对应 DNS 或 IPv6 项并验证。</li>
+</ol>
+<p>DoH 或 DoT 可以加密相应的 DNS 传输，但不会自动让所有解析遵循代理路径。不要因为用了加密 DNS 就忽略实际流量出口，也不要把陌生公共解析器直接当成完整修复方案。</p>
+<p>排查记录能说明“什么改变让同一请求恢复”，才有助于后续修复。只记录“换了很多设置终于能用”，通常很难在下次复现。</p>
+</div>
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.shandianyun.org/tags/troubleshooting/"># 故障排查</a><a href="https://www.shandianyun.org/tags/dns/"># DNS</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.shandianyun.org/posts/airport-node-speed-latency-test-guide/">← 上一篇</a><a href="https://www.shandianyun.org/posts/rule-global-system-proxy-tun-explained/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+
+<div class="article-rail">
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">一个域名，需要经过哪些环节</a><a class="level-2" href="#fake-ip-">Fake-IP 为什么不是网站真实地址</a><a class="level-2" href="#heading-1">先记录，再查询</a><a class="level-2" href="#ipv6-">IPv6 排查，要分清三个层面</a><a class="level-2" href="#heading-2">一个实用的排查顺序</a></nav></aside>
+</div>
+
+</main>
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+<footer class="site-footer silu-footer"><div class="footer-inner"><span>© 2026 闪电云</span><span class="footer-signature"><span aria-hidden="true"></span>连接世界，从这里出发</span></div></footer>
+
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://www.shandianyun.org/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.shandianyun.org/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.shandianyun.org/pagefind/" base-url="https://www.shandianyun.org/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/64fa1ab7-a67e-41c4-abc6-f9ebf3efd42a/","pageTitle":"DNS、Fake-IP 与 IPv6 排查教程：节点在线却打不开网页怎么办","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
+
+</body>
+</html>

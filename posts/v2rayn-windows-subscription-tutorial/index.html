@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="silu-cloud">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理 · 闪电云</title>
+<meta name="description" content="介绍 v2rayN Windows 的官方包选择、订阅分组更新、活动节点选择、系统代理与路由配置，解释节点列表非空却不能联网的常见原因。">
+<meta name="keywords" content="v2rayN教程,Windows代理客户端,v2rayN订阅分组,自动配置系统代理,v2rayN路由">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/">
+<meta property="og:title" content="v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理">
+<meta property="og:description" content="介绍 v2rayN Windows 的官方包选择、订阅分组更新、活动节点选择、系统代理与路由配置，解释节点列表非空却不能联网的常见原因。">
+<meta property="og:url" content="https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="闪电云">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png"><meta property="og:image:alt" content="闪电云">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理">
+<meta name="twitter:description" content="介绍 v2rayN Windows 的官方包选择、订阅分组更新、活动节点选择、系统代理与路由配置，解释节点列表非空却不能联网的常见原因。">
+<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png">
+<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-04T00:25:14&#43;08:00"><meta property="article:modified_time" content="2026-10-04T00:25:36&#43;08:00"><meta property="article:tag" content="订阅管理"><meta property="article:tag" content="v2rayN">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/#article","@type":"BlogPosting","author":{"@type":"Person","name":"闪电云"},"dateModified":"2026-10-04T00:25:36+08:00","datePublished":"2026-10-04T00:25:14+08:00","description":"介绍 v2rayN Windows 的官方包选择、订阅分组更新、活动节点选择、系统代理与路由配置，解释节点列表非空却不能联网的常见原因。","headline":"v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/","@type":"WebPage"},"url":"https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.shandianyun.org/","name":"闪电云","position":1},{"@type":"ListItem","item":"https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/","name":"v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理","position":2}]}]}</script>
+
+<script>(()=>{let mode='light';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/style.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/search.css"><script defer src="https://www.shandianyun.org/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/skin.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/reader.css">
+<link rel="icon" href="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/artalk.css"><script defer src="https://www.shandianyun.org/assets/theme/artalk.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/theme.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/reader.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/viewer.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://www.shandianyun.org/assets/theme/interactions.js"></script>
+
+
+
+</head>
+
+<body class="reader-page silu-page article-page">
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header silu-header"><div class="header-inner">
+<a class="brand" href="https://www.shandianyun.org/"><img src="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png" alt="" width="40" height="40"><span>闪电云</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://www.shandianyun.org/">首页</a><a href="https://www.shandianyun.org/#service-plans">服务方案</a></nav>
+<a class="search-toggle" href="https://www.shandianyun.org/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮"><svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单"><svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+</div></header>
+
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell silu-shell article-shell" data-has-toc="true">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云</a></li><li><span aria-current="page">v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理</span></li></ol></nav>
+
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>文章详情</div>
+<h1 data-pagefind-meta="title">v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理</h1>
+<div class="metadata" data-pagefind-ignore><span>闪电云</span><time datetime="2026-10-04T00:25:14&#43;08:00">2026-10-04</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://www.shandianyun.org/categories/proxy-client-tutorials/">客户端教程</a></div>
+</header>
+<div class="prose"><p>v2rayN 中出现节点列表之后，还需要选择活动配置，并让应用请求进入代理核心。本文用 Windows 上的基础使用场景，说明订阅分组、活动配置、系统代理和路由各自负责什么。</p>
+<p>操作入口名称可能随版本调整，以下以功能名称描述，不依赖某一个按钮的位置。</p>
+<h2 id="-windows-">先选对 Windows 发布包</h2>
+<p>从 <a href="https://github.com/2dust/v2rayN/releases">v2rayN 官方发布入口</a>下载与设备架构匹配的文件。项目的发布文件说明列出了 Windows x64、ARM64 及不同界面包，便携 ZIP 应完整解压后运行。<a href="https://github.com/2dust/v2rayN/wiki/Release-files-introduction">参考：发布文件介绍</a></p>
+<p>将文件放到自己有写入权限的固定目录，避免在压缩包预览窗口里启动。第一次运行确认界面和核心能够正常工作；遇到依赖提示时，按对应发布说明处理，而不是随意下载陌生站点的“修复组件”。</p>
+<h2 id="heading">建立一个清晰的订阅分组</h2>
+<ol>
+<li>打开订阅分组管理，新增分组。</li>
+<li>填写容易辨认的备注名称。</li>
+<li>在地址字段粘贴服务商为 v2rayN 提供的订阅 URL。</li>
+<li>保持这个分组的更新功能启用，保存设置。</li>
+<li>更新该分组，查看更新结果与节点列表。</li>
+</ol>
+<p>首次使用不要把多个地址全部混进同一分组。一个分组对应一个来源，出现格式或授权问题时更容易定位。</p>
+<p>官方界面说明中，“可选地址”“更多地址”、过滤及订阅转换有不同作用。只有确实需要时再配置这些高级项。<a href="https://github.com/2dust/v2rayN/wiki/Description-of-some-ui">参考：订阅分组与更新说明</a></p>
+<p><img src="https://www.shandianyun.org/assets/media/d98bb7df-7a03-4bf7-a69c-fd857eee550e.png" alt="v2rayN 从解压到系统代理验证的流程"></p>
+<h2 id="heading-1">更新成功后，设为活动配置</h2>
+<p>从已更新的节点中选择一个，用当前版本提供的“设为活动配置”或对应启用功能使其生效。然后查看主界面状态、日志或核心提示，确认当前使用的确实是这个节点。</p>
+<p>不要把测试列表中的低延迟节点和当前活动节点混为一谈。一个节点出现在列表里，不代表核心正在使用它；分组更新后，节点被替换或移除，也可能需要重新选择。</p>
+<p>可以记录一组最小信息：分组名、节点名、客户端版本、测试时间和目标服务。出现问题时，在同样条件下换一个节点才有比较价值。</p>
+<h2 id="heading-2">系统代理与路由，分别设置</h2>
+<p>系统代理决定遵循操作系统代理设置的应用是否把请求交给核心；路由决定已经进入核心的请求通过哪个出口发出。二者需要分别核对。</p>
+<p>v2rayN 官方文档将“自动配置系统代理”“清除系统代理”“不改变系统代理”和 PAC 分别说明。<a href="https://github.com/2dust/v2rayN/wiki/Description-of-system-proxy-routing">参考：系统代理和路由</a></p>
+<p>首次使用浏览器验证时，可以选择“自动配置系统代理”，再选择符合自己用途的路由。若使用按地区分流的预设，也要查看具体规则及实际连接记录，不能仅凭预设名称保证所有服务都会按预期处理。</p>
+<h2 id="heading-3">用一个真实请求完成验证</h2>
+<p>开启后，在浏览器访问你有权使用的目标，查看请求能否完成，再核对客户端记录。若连接记录为空，优先查入口；若记录显示已选节点但连接超时，再检查节点、网络或服务状态。</p>
+<table>
+<thead>
+<tr>
+<th>看到的现象</th>
+<th>可以先确认什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>节点列表为空</td>
+<td>分组是否启用更新，地址和格式是否匹配</td>
+</tr>
+<tr>
+<td>列表有节点但核心报错</td>
+<td>活动配置是否正确，当前核心是否支持字段</td>
+</tr>
+<tr>
+<td>浏览器没有进入代理</td>
+<td>系统代理是否生效，浏览器是否使用其他配置</td>
+</tr>
+<tr>
+<td>一个应用能用，另一个不能</td>
+<td>应用是否遵循系统代理，是否有独立设置</td>
+</tr>
+<tr>
+<td>更新订阅超时</td>
+<td>更新时采用的网络路径是否可用</td>
+</tr>
+</tbody>
+</table>
+<p>“通过代理更新”需要已有可用代理路径；当当前节点不可用时，这条更新路径可能也失败。可以结合官方更新逻辑，用可用网络作一次对照，避免陷入“必须先更新才联网、必须先联网才更新”的循环。</p>
+<h2 id="heading-4">日常维护只做必要调整</h2>
+<p>正常工作后，再考虑自动更新、额外路由或 TUN。先保存自己的正常配置信息；修改一项后立即验证，有问题就回到上一个可用状态。</p>
+<p>退出前清除不再使用的系统代理。若已经使用 TUN，也应正常停止它。分享日志时遮盖完整订阅地址、UUID、密码和令牌，保留错误类型及发生时间即可。</p>
+</div>
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.shandianyun.org/tags/subscription-management/"># 订阅管理</a><a href="https://www.shandianyun.org/tags/v2rayn/"># v2rayN</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.shandianyun.org/posts/v2rayng-android-subscription-tutorial/">← 上一篇</a><a href="https://www.shandianyun.org/posts/clash-verge-rev-beginner-tutorial/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+
+<div class="article-rail">
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#-windows-">先选对 Windows 发布包</a><a class="level-2" href="#heading">建立一个清晰的订阅分组</a><a class="level-2" href="#heading-1">更新成功后，设为活动配置</a><a class="level-2" href="#heading-2">系统代理与路由，分别设置</a><a class="level-2" href="#heading-3">用一个真实请求完成验证</a><a class="level-2" href="#heading-4">日常维护只做必要调整</a></nav></aside>
+</div>
+
+</main>
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+<footer class="site-footer silu-footer"><div class="footer-inner"><span>© 2026 闪电云</span><span class="footer-signature"><span aria-hidden="true"></span>连接世界，从这里出发</span></div></footer>
+
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://www.shandianyun.org/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.shandianyun.org/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.shandianyun.org/pagefind/" base-url="https://www.shandianyun.org/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/639fc624-52d7-48c6-9f43-24bd167a4927/","pageTitle":"v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
+
+</body>
+</html>

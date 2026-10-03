@@ -77,7 +77,17 @@
 <dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
 <header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
 <div class="reader-dialog-body">
-<div class="empty"><h3>还没有可搜索的文章</h3><p>文章发布后，可以在这里搜索标题和正文。</p></div>
+
+<div id="site-search-ui" data-module="https://www.shandianyun.org/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.shandianyun.org/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.shandianyun.org/pagefind/" base-url="https://www.shandianyun.org/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
 </div>
 </dialog>
 
