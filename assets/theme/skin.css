@@ -205,7 +205,14 @@
 .silu-page .silu-shell .article-rail > .toc > div { font-size: 13px; color: var(--text); margin-bottom: 12px; }
 .silu-page .silu-shell .article-rail > .toc a { font-size: 12px; line-height: 1.9; color: var(--muted); overflow-wrap: anywhere; }
 .silu-page .silu-shell .article-rail > .toc a:hover { color: var(--accent); }
-.silu-page .silu-shell .article-rail > .ad-slot { min-height: 0; overflow-y: auto; }
+.silu-page .silu-shell .article-rail > .ad-slot { min-height: 0; overflow-y: auto; grid-auto-rows: max-content; align-content: start; }
+/* 侧栏空间不足时滚动整张广告，避免网格压缩卡片并截掉图片后的文字。 */
+.silu-page .article-rail .ad-card { min-width: 0; }
+.silu-page .article-rail .ad-card-mixed { display: grid; grid-template-columns: 56px minmax(0, 1fr); align-items: center; gap: 12px; padding: 16px; }
+.silu-page .article-rail .ad-card-mixed > .ad-image { width: 56px; height: 56px; max-height: none; object-fit: contain; border-radius: 10px; }
+.silu-page .article-rail .ad-card-mixed > .ad-copy { min-width: 0; padding: 0; font-size: 12px; line-height: 1.75; }
+.silu-page .article-rail .ad-copy h2, .silu-page .article-rail .ad-copy h3, .silu-page .article-rail .ad-copy h4 { font-size: 15px; line-height: 1.5; margin: 0 0 4px; }
+.silu-page .article-rail .ad-copy p { margin: 6px 0 0; color: var(--muted); }
 .silu-page .like-button { border-radius: 10px; background: var(--soft); color: var(--accent); border: 1px solid var(--line); }
 .silu-page .back-to-top { border-radius: 12px; background: var(--surface); }
 .silu-page .silu-footer { width: calc(100% - 64px); max-width: 1176px; border-top: 1px solid var(--line); padding: 14px 0; font-size: 11px; color: var(--muted); }
