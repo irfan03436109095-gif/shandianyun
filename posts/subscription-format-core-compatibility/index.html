@@ -4,23 +4,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>改了机场账号密码，订阅链接会自动失效吗？三类凭据分别验收 · 闪电云</title>
-<meta name="description" content="机场账号改密码后旧订阅是否仍有效？区分登录、订阅更新与节点认证，按官方规则核对撤销、重新导入和旧凭据处理，不猜测服务商实现。">
-<meta name="keywords" content="机场推荐,订阅链接安全,机场账号密码,凭据撤销">
-<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.shandianyun.org/posts/password-subscription-credential-check/">
-<meta property="og:title" content="改了机场账号密码，订阅链接会自动失效吗？三类凭据分别验收">
-<meta property="og:description" content="机场账号改密码后旧订阅是否仍有效？区分登录、订阅更新与节点认证，按官方规则核对撤销、重新导入和旧凭据处理，不猜测服务商实现。">
-<meta property="og:url" content="https://www.shandianyun.org/posts/password-subscription-credential-check/">
+<title>支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对 · 闪电云</title>
+<meta name="description" content="机场订阅导入失败怎样判断格式问题？区分 YAML、URI、Base64 与 JSON 配置，核对客户端入口和核心支持，保护订阅后再做首次使用验收。">
+<meta name="keywords" content="机场推荐,订阅格式,客户端兼容,机场订阅导入失败">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.shandianyun.org/posts/subscription-format-core-compatibility/">
+<meta property="og:title" content="支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对">
+<meta property="og:description" content="机场订阅导入失败怎样判断格式问题？区分 YAML、URI、Base64 与 JSON 配置，核对客户端入口和核心支持，保护订阅后再做首次使用验收。">
+<meta property="og:url" content="https://www.shandianyun.org/posts/subscription-format-core-compatibility/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="闪电云">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png"><meta property="og:image:alt" content="闪电云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="改了机场账号密码，订阅链接会自动失效吗？三类凭据分别验收">
-<meta name="twitter:description" content="机场账号改密码后旧订阅是否仍有效？区分登录、订阅更新与节点认证，按官方规则核对撤销、重新导入和旧凭据处理，不猜测服务商实现。">
+<meta name="twitter:title" content="支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对">
+<meta name="twitter:description" content="机场订阅导入失败怎样判断格式问题？区分 YAML、URI、Base64 与 JSON 配置，核对客户端入口和核心支持，保护订阅后再做首次使用验收。">
 <meta name="twitter:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png">
-<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-05T09:53:37&#43;08:00"><meta property="article:modified_time" content="2026-10-05T09:53:40&#43;08:00"><meta property="article:tag" content="机场入门"><meta property="article:tag" content="订阅管理"><meta property="article:tag" content="隐私保护">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.shandianyun.org/posts/password-subscription-credential-check/#article","@type":"BlogPosting","author":{"@type":"Person","name":"闪电云"},"dateModified":"2026-10-05T09:53:40+08:00","datePublished":"2026-10-05T09:53:37+08:00","description":"机场账号改密码后旧订阅是否仍有效？区分登录、订阅更新与节点认证，按官方规则核对撤销、重新导入和旧凭据处理，不猜测服务商实现。","headline":"改了机场账号密码，订阅链接会自动失效吗？三类凭据分别验收","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.shandianyun.org/posts/password-subscription-credential-check/","@type":"WebPage"},"url":"https://www.shandianyun.org/posts/password-subscription-credential-check/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.shandianyun.org/","name":"闪电云","position":1},{"@type":"ListItem","item":"https://www.shandianyun.org/posts/password-subscription-credential-check/","name":"改了机场账号密码，订阅链接会自动失效吗？三类凭据分别验收","position":2}]}]}</script>
+<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-06T09:40:24&#43;08:00"><meta property="article:modified_time" content="2026-10-06T09:40:36&#43;08:00"><meta property="article:tag" content="机场入门"><meta property="article:tag" content="订阅管理"><meta property="article:tag" content="故障排查">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.shandianyun.org/posts/subscription-format-core-compatibility/#article","@type":"BlogPosting","author":{"@type":"Person","name":"闪电云"},"dateModified":"2026-10-06T09:40:36+08:00","datePublished":"2026-10-06T09:40:24+08:00","description":"机场订阅导入失败怎样判断格式问题？区分 YAML、URI、Base64 与 JSON 配置，核对客户端入口和核心支持，保护订阅后再做首次使用验收。","headline":"支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.shandianyun.org/posts/subscription-format-core-compatibility/","@type":"WebPage"},"url":"https://www.shandianyun.org/posts/subscription-format-core-compatibility/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.shandianyun.org/","name":"闪电云","position":1},{"@type":"ListItem","item":"https://www.shandianyun.org/posts/subscription-format-core-compatibility/","name":"支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对","position":2}]}]}</script>
 
 <script>(()=>{let mode='light';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
 <link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/style.css">
@@ -65,68 +65,69 @@
 <div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
 <main id="main" tabindex="-1" class="shell silu-shell article-shell" data-has-toc="true">
 
-<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云</a></li><li><span aria-current="page">改了机场账号密码，订阅链接会自动失效吗？三类凭据分别验收</span></li></ol></nav>
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云</a></li><li><span aria-current="page">支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对</span></li></ol></nav>
 
 
 
 <article data-pagefind-body>
 <header class="article-header">
 <div class="eyebrow" data-pagefind-ignore>文章详情</div>
-<h1 data-pagefind-meta="title">改了机场账号密码，订阅链接会自动失效吗？三类凭据分别验收</h1>
-<div class="metadata" data-pagefind-ignore><span>闪电云</span><time datetime="2026-10-05T09:53:37&#43;08:00">2026-10-05</time><span><span id="page-views">—</span> 次阅读</span></div>
+<h1 data-pagefind-meta="title">支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对</h1>
+<div class="metadata" data-pagefind-ignore><span>闪电云</span><time datetime="2026-10-06T09:40:24&#43;08:00">2026-10-06</time><span><span id="page-views">—</span> 次阅读</span></div>
 <div class="chips" data-pagefind-ignore><a href="https://www.shandianyun.org/categories/subscription-configuration/">订阅与配置</a></div>
 </header>
-<div class="prose"><p>发现订阅链接可能泄露后，只修改机场账号密码，是否足够？答案取决于服务商怎样绑定各类凭据。不能假定登录密码、订阅标识和客户端连接凭据一定同步失效。</p>
-<p>本文是核对流程，不代表闪电云或其他某家服务商的具体撤销机制。涉及真实账号的操作，应以当前官方面板说明与支持答复为准。</p>
-<p><img src="https://www.shandianyun.org/assets/media/eb39bf10-67d7-4da2-a938-4ed20b071006.png" alt="账号登录、订阅更新与节点连接三类凭据分别核对"></p>
-<p><em>示意图：三类凭据可能关联，也可能独立，需要以官方规则分别验收。</em></p>
-<h2 id="heading">三类凭据承担不同任务</h2>
+<div class="prose"><p>套餐说明里写着某种协议可用，并不等于同一条订阅链接可以直接导入所有客户端。协议说明连接怎样工作，订阅格式说明配置怎样装进文件；客户端还需要知道从哪个入口读取，以及由哪个核心执行。</p>
+<p>本文适合首次导入失败或更换客户端的用户，优先使用站点面板和客户端官方支持的导出方式，不把完整订阅交给陌生在线转换服务。</p>
+<p><img src="https://www.shandianyun.org/assets/media/3a01392b-7c4c-42e5-806c-3b5c19d3eaa4.png" alt="节点协议、订阅格式与客户端核心依次匹配的三项检查"></p>
+<p><em>示意图：协议、格式与核心需要分别兼容，不能仅凭协议名称判断导入成功。</em></p>
+<h2 id="heading">先分清三层兼容</h2>
 <table>
 <thead>
 <tr>
-<th>凭据或入口</th>
-<th>常见用途</th>
-<th>必须单独确认的问题</th>
+<th>层次</th>
+<th>核对什么</th>
+<th>常见误判</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>账号密码</td>
-<td>登录管理面板</td>
-<td>修改后旧登录会话如何处理？</td>
+<td>节点协议</td>
+<td>节点实际协议及必要参数</td>
+<td>有同名协议就认为全部特性兼容</td>
 </tr>
 <tr>
-<td>订阅链接中的访问凭据</td>
-<td>获取客户端配置</td>
-<td>是否需要单独重置，旧链接何时失效？</td>
+<td>配置载体</td>
+<td>返回的是哪种格式、是否完整配置</td>
+<td>把任何文本都当同一种订阅</td>
 </tr>
 <tr>
-<td>节点连接认证信息</td>
-<td>客户端建立代理连接</td>
-<td>订阅重置是否同时改变连接凭据？</td>
+<td>读取与运行</td>
+<td>客户端导入入口、核心支持与日志</td>
+<td>只看软件图标相似就认为入口相同</td>
 </tr>
 </tbody>
 </table>
-<p>有的实现会关联这些动作，有的分别管理，不能从“密码修改成功”推导出另外两项已经撤销。</p>
-<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html">OWASP 的秘密管理指南</a>把轮换与撤销列为凭据生命周期中的独立环节。这里据此建议分别验收；它不是任何机场产品自动执行某种动作的证明。</p>
-<h2 id="heading-1">先定位泄露了哪一项</h2>
+<p><a href="https://wiki.metacubex.one/en/config/proxy-providers/content/">mihomo 官方资料</a>列出了代理集合文件的 YAML、URI 和 Base64 内容形式，并说明这些形式不能混写在同一个文件。这个说明针对其代理集合，不代表任何软件的任意导入入口都接受这些形式。</p>
+<p><a href="https://sing-box.sagernet.org/configuration/">sing-box 官方配置说明</a>使用 JSON 配置，并提供配置检查命令。由此不能把另一种配置简单改个扩展名就视为转换完成；桌面客户端怎样生成核心配置，还需要看对应客户端文档。</p>
+<h2 id="heading-1">按四步排查导入</h2>
 <ol>
-<li>在自己的设备记录问题范围：账号密码、完整订阅 URL，还是包含节点认证的配置文件。不要把原文发到公开群或本文评论。</li>
-<li>查看官方面板说明，寻找对应凭据的修改、重置或撤销机制；操作名称不清楚时询问官方支持。</li>
-<li>确认这些操作是否影响已有会话、旧订阅和已导入的客户端配置。支持答复也应保留日期与适用范围。</li>
-<li>按官方流程处理确认泄露的项，不为了试验随意重置所有设备或反复生成新链接。</li>
+<li><strong>保存原配置。</strong> 在客户端允许的方式下备份当前可用分组，不覆盖全部节点来试错。</li>
+<li><strong>选对应导出入口。</strong> 在站点账号面板中选择当前客户端官方说明对应的订阅或配置入口，记录入口名称，不只看链接长短。</li>
+<li><strong>区分下载与解析。</strong> 记录更新结果和错误文字。下载成功只能说明取得了内容；若取得登录网页、错误提示或不匹配格式，还不等于配置可用。</li>
+<li><strong>单独验收新分组。</strong> 确认节点已出现、协议和必要信息能被客户端处理，再选一个节点做首次连接和公开页面任务验收。</li>
 </ol>
-<h2 id="heading-2">新配置与旧凭据各自验收</h2>
-<p>从可信的官方面板取新的订阅，按所用客户端官方教程更新或替换原分组，避免保留两套不清楚来源的配置。使用一个小型公开访问任务确认新配置可正常完成连接。</p>
-<p>再单独核对旧凭据的处理结果：面板是否说明已撤销、是否存在生效等待时间、已导入节点的认证是否也需更新。删除手机里的配置，只改变本机保存内容，不能作为服务端撤销的证据。</p>
-<p>不要把完整订阅 URL 交给未核实的在线转换工具；它可能携带获取配置所需的凭据。提供工单时可描述凭据类型、操作时间和错误现象，不必公开凭据正文。</p>
-<h2 id="heading-3">完成后的三个答案</h2>
-<p>你应能回答：账号登录是否按官方规则处理、订阅访问凭据是否完成所需撤销或轮换、客户端连接信息是否需要更新。无法确认的项保留为待核对，不用一个“新链接能导入”替代全部验收。机场推荐中的安全教程，应该让这些判断可复查，而不是承诺改一次密码就解决所有泄露。</p>
+<p>需要查看下载内容时，仅在自己控制的本地环境私下检查并按官方方法处理。文件可能含订阅令牌、节点密码或 UUID，不粘贴到公开评论、截图或不可信转换页面。</p>
+<h2 id="heading-2">导入后仍不能连接怎么查</h2>
+<p>“列表出现了节点”是读取层的结果，连接能力还取决于核心对协议及其具体选项的支持。记录客户端与核心实际版本、出错字段和时间，去官方兼容文档核对；不要盲删安全字段，或为了连通关闭证书验证。</p>
+<p>向支持提交最小错误记录即可：客户端名称、实际版本、导出入口名称、发生阶段和已遮盖敏感值的报错。不要用完整配置代替问题说明。</p>
+<h2 id="heading-3">怎样算首次验收完成</h2>
+<p>你应能说明使用的节点协议、返回配置形式与导入入口，并确认新分组没有覆盖原配置、节点可读取、实际任务成功。机场推荐中的“支持某协议”只是兼容核对的一部分，不能替代完整的订阅与客户端验收。</p>
 <h2 id="heading-4">来源与核验日期</h2>
 <ul>
-<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html">OWASP：Secrets Management 凭据生命周期</a></li>
+<li><a href="https://wiki.metacubex.one/en/config/proxy-providers/content/">mihomo：代理集合文件的内容格式</a></li>
+<li><a href="https://sing-box.sagernet.org/configuration/">sing-box：JSON 配置与检查</a></li>
 </ul>
-<p>官方资料核验日期：2026-10-05。文中的表格和流程用于自行检查，不代表本站对某家机场的实测结论。</p>
+<p>官方资料核验日期：2026-10-06。文中的表格和流程用于自行检查，不代表本站对某家机场的实测结论。</p>
 </div>
 <div class="article-likes" data-pagefind-ignore>
 <button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
@@ -134,13 +135,13 @@
 <span id="page-like-label">点赞</span><span id="page-like-count">—</span>
 </button><p id="page-like-message" role="status"></p>
 </div>
-<div class="article-tags" data-pagefind-ignore><a href="https://www.shandianyun.org/tags/airport-basics/"># 机场入门</a><a href="https://www.shandianyun.org/tags/subscription-management/"># 订阅管理</a><a href="https://www.shandianyun.org/tags/privacy/"># 隐私保护</a></div>
-<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.shandianyun.org/posts/subscription-format-core-compatibility/">← 上一篇</a><a href="https://www.shandianyun.org/posts/airport-beginner-subscription-computer-mobile-guide/">下一篇 →</a></nav>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.shandianyun.org/tags/airport-basics/"># 机场入门</a><a href="https://www.shandianyun.org/tags/subscription-management/"># 订阅管理</a><a href="https://www.shandianyun.org/tags/troubleshooting/"># 故障排查</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><span></span><a href="https://www.shandianyun.org/posts/password-subscription-credential-check/">下一篇 →</a></nav>
 <section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
 </article>
 
 <div class="article-rail">
-<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">三类凭据承担不同任务</a><a class="level-2" href="#heading-1">先定位泄露了哪一项</a><a class="level-2" href="#heading-2">新配置与旧凭据各自验收</a><a class="level-2" href="#heading-3">完成后的三个答案</a><a class="level-2" href="#heading-4">来源与核验日期</a></nav></aside>
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">先分清三层兼容</a><a class="level-2" href="#heading-1">按四步排查导入</a><a class="level-2" href="#heading-2">导入后仍不能连接怎么查</a><a class="level-2" href="#heading-3">怎样算首次验收完成</a><a class="level-2" href="#heading-4">来源与核验日期</a></nav></aside>
 <aside class="ad-slot" aria-label="文章相关内容" data-ad-position="article_sidebar" data-pagefind-ignore><a class="ad-card ad-card-mixed" href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer" aria-label="FlyBit · 文章推荐（在新标签页打开）" data-ad-link>
 <img class="ad-image" src="https://www.shandianyun.org/assets/media/f1048065-aeb8-4802-a266-ebde389104bb.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async">
 <div class="ad-copy"><h3>FlyBit</h3>
@@ -181,7 +182,7 @@
 </div>
 </dialog>
 
-<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/6f304122-82fa-4172-ae1d-53b9442a45f2/","pageTitle":"改了机场账号密码，订阅链接会自动失效吗？三类凭据分别验收","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/55d24f67-d4de-4e08-bac4-70c21a7598fd/","pageTitle":"支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
 
 </body>
 </html>
