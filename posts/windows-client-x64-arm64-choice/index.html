@@ -4,23 +4,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对 · 闪电云</title>
-<meta name="description" content="机场订阅导入失败怎样判断格式问题？区分 YAML、URI、Base64 与 JSON 配置，核对客户端入口和核心支持，保护订阅后再做首次使用验收。">
-<meta name="keywords" content="机场推荐,订阅格式,客户端兼容,机场订阅导入失败">
-<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.shandianyun.org/posts/subscription-format-core-compatibility/">
-<meta property="og:title" content="支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对">
-<meta property="og:description" content="机场订阅导入失败怎样判断格式问题？区分 YAML、URI、Base64 与 JSON 配置，核对客户端入口和核心支持，保护订阅后再做首次使用验收。">
-<meta property="og:url" content="https://www.shandianyun.org/posts/subscription-format-core-compatibility/">
+<title>客户端安装包的 x64 与 arm64 怎么选？新电脑上手核对 · 闪电云</title>
+<meta name="description" content="机场客户端安装包怎样选择 x64 或 arm64？查看设备系统和处理器信息，对照官方下载架构与依赖要求，完成启动、接管和实际任务验收。">
+<meta name="keywords" content="机场推荐,客户端安装包,x64与arm64,Windows上手">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.shandianyun.org/posts/windows-client-x64-arm64-choice/">
+<meta property="og:title" content="客户端安装包的 x64 与 arm64 怎么选？新电脑上手核对">
+<meta property="og:description" content="机场客户端安装包怎样选择 x64 或 arm64？查看设备系统和处理器信息，对照官方下载架构与依赖要求，完成启动、接管和实际任务验收。">
+<meta property="og:url" content="https://www.shandianyun.org/posts/windows-client-x64-arm64-choice/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="闪电云">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png"><meta property="og:image:alt" content="闪电云">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对">
-<meta name="twitter:description" content="机场订阅导入失败怎样判断格式问题？区分 YAML、URI、Base64 与 JSON 配置，核对客户端入口和核心支持，保护订阅后再做首次使用验收。">
+<meta name="twitter:title" content="客户端安装包的 x64 与 arm64 怎么选？新电脑上手核对">
+<meta name="twitter:description" content="机场客户端安装包怎样选择 x64 或 arm64？查看设备系统和处理器信息，对照官方下载架构与依赖要求，完成启动、接管和实际任务验收。">
 <meta name="twitter:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png">
-<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-06T09:40:24&#43;08:00"><meta property="article:modified_time" content="2026-10-06T09:40:36&#43;08:00"><meta property="article:tag" content="机场入门"><meta property="article:tag" content="订阅管理"><meta property="article:tag" content="故障排查">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.shandianyun.org/posts/subscription-format-core-compatibility/#article","@type":"BlogPosting","author":{"@type":"Person","name":"闪电云"},"dateModified":"2026-10-06T09:40:36+08:00","datePublished":"2026-10-06T09:40:24+08:00","description":"机场订阅导入失败怎样判断格式问题？区分 YAML、URI、Base64 与 JSON 配置，核对客户端入口和核心支持，保护订阅后再做首次使用验收。","headline":"支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.shandianyun.org/posts/subscription-format-core-compatibility/","@type":"WebPage"},"url":"https://www.shandianyun.org/posts/subscription-format-core-compatibility/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.shandianyun.org/","name":"闪电云","position":1},{"@type":"ListItem","item":"https://www.shandianyun.org/posts/subscription-format-core-compatibility/","name":"支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对","position":2}]}]}</script>
+<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-07T09:42:21&#43;08:00"><meta property="article:modified_time" content="2026-10-07T09:42:26&#43;08:00"><meta property="article:tag" content="机场入门"><meta property="article:tag" content="故障排查">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.shandianyun.org/posts/windows-client-x64-arm64-choice/#article","@type":"BlogPosting","author":{"@type":"Person","name":"闪电云"},"dateModified":"2026-10-07T09:42:26+08:00","datePublished":"2026-10-07T09:42:21+08:00","description":"机场客户端安装包怎样选择 x64 或 arm64？查看设备系统和处理器信息，对照官方下载架构与依赖要求，完成启动、接管和实际任务验收。","headline":"客户端安装包的 x64 与 arm64 怎么选？新电脑上手核对","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.shandianyun.org/posts/windows-client-x64-arm64-choice/","@type":"WebPage"},"url":"https://www.shandianyun.org/posts/windows-client-x64-arm64-choice/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.shandianyun.org/","name":"闪电云","position":1},{"@type":"ListItem","item":"https://www.shandianyun.org/posts/windows-client-x64-arm64-choice/","name":"客户端安装包的 x64 与 arm64 怎么选？新电脑上手核对","position":2}]}]}</script>
 
 <script>(()=>{let mode='light';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
 <link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/style.css">
@@ -65,69 +65,71 @@
 <div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
 <main id="main" tabindex="-1" class="shell silu-shell article-shell" data-has-toc="true">
 
-<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云</a></li><li><span aria-current="page">支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对</span></li></ol></nav>
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云</a></li><li><span aria-current="page">客户端安装包的 x64 与 arm64 怎么选？新电脑上手核对</span></li></ol></nav>
 
 
 
 <article data-pagefind-body>
 <header class="article-header">
 <div class="eyebrow" data-pagefind-ignore>文章详情</div>
-<h1 data-pagefind-meta="title">支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对</h1>
-<div class="metadata" data-pagefind-ignore><span>闪电云</span><time datetime="2026-10-06T09:40:24&#43;08:00">2026-10-06</time><span><span id="page-views">—</span> 次阅读</span></div>
-<div class="chips" data-pagefind-ignore><a href="https://www.shandianyun.org/categories/subscription-configuration/">订阅与配置</a></div>
+<h1 data-pagefind-meta="title">客户端安装包的 x64 与 arm64 怎么选？新电脑上手核对</h1>
+<div class="metadata" data-pagefind-ignore><span>闪电云</span><time datetime="2026-10-07T09:42:21&#43;08:00">2026-10-07</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://www.shandianyun.org/categories/proxy-client-tutorials/">客户端教程</a></div>
 </header>
-<div class="prose"><p>套餐说明里写着某种协议可用，并不等于同一条订阅链接可以直接导入所有客户端。协议说明连接怎样工作，订阅格式说明配置怎样装进文件；客户端还需要知道从哪个入口读取，以及由哪个核心执行。</p>
-<p>本文适合首次导入失败或更换客户端的用户，优先使用站点面板和客户端官方支持的导出方式，不把完整订阅交给陌生在线转换服务。</p>
-<p><img src="https://www.shandianyun.org/assets/media/3a01392b-7c4c-42e5-806c-3b5c19d3eaa4.png" alt="节点协议、订阅格式与客户端核心依次匹配的三项检查"></p>
-<p><em>示意图：协议、格式与核心需要分别兼容，不能仅凭协议名称判断导入成功。</em></p>
-<h2 id="heading">先分清三层兼容</h2>
+<div class="prose"><p>下载页同时列出 <code>x64</code> 和 <code>arm64</code>，两者都可能是 64 位程序，但面向的处理器架构不同。不要只看电脑是否“64 位”，也不要因为别人装的是某个文件就直接照搬。</p>
+<p>本文以 Windows 电脑和 Clash Verge Rev 官方下载分类为例，不指定未经核对的最新版本，也不保证所有客户端或驱动都能在任意架构上运行。</p>
+<p><img src="https://www.shandianyun.org/assets/media/52cecb0b-f864-414a-b765-a5fc5ec3872d.png" alt="先核对设备架构再选择 x64 或 arm64 安装包并验收的示意"></p>
+<p><em>示意图：先确认设备条件，再匹配官方安装包，程序与网络功能分别验收。</em></p>
+<h2 id="heading">下载之前先记录设备条件</h2>
+<p>打开“设置 → 系统 → 关于”，记录 Windows 版本、设备处理器信息及界面提供的系统类型。不要凭电脑品牌、外形或售价猜架构。若信息不够明确，向设备厂商核对型号规格。</p>
+<p><a href="https://support.microsoft.com/en-us/windows/experience/find-information-about-your-windows-device">微软的设备信息说明</a>提供了查看系统与处理器信息的入口。<a href="https://www.clashverge.dev/install.html">Clash Verge Rev 官方安装页面</a>则把 Windows 下载按 <code>x64</code> 和 <code>arm64</code> 分类；应从该项目正式页面核对当前文件，而不是搜索同名下载站。</p>
 <table>
 <thead>
 <tr>
-<th>层次</th>
-<th>核对什么</th>
-<th>常见误判</th>
+<th>已确认的条件</th>
+<th>选择时核对</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>节点协议</td>
-<td>节点实际协议及必要参数</td>
-<td>有同名协议就认为全部特性兼容</td>
+<td>x64 系统与处理器</td>
+<td>官方 Windows x64 构建及其系统要求</td>
 </tr>
 <tr>
-<td>配置载体</td>
-<td>返回的是哪种格式、是否完整配置</td>
-<td>把任何文本都当同一种订阅</td>
+<td>Arm 架构的 Windows 设备</td>
+<td>官方 Arm64 构建与组件支持</td>
 </tr>
 <tr>
-<td>读取与运行</td>
-<td>客户端导入入口、核心支持与日志</td>
-<td>只看软件图标相似就认为入口相同</td>
+<td>只有“64 位”但架构不清楚</td>
+<td>先核对设备型号，不随意猜文件</td>
+</tr>
+<tr>
+<td>系统版本不在项目支持范围</td>
+<td>查看正式兼容要求，不靠改文件名安装</td>
 </tr>
 </tbody>
 </table>
-<p><a href="https://wiki.metacubex.one/en/config/proxy-providers/content/">mihomo 官方资料</a>列出了代理集合文件的 YAML、URI 和 Base64 内容形式，并说明这些形式不能混写在同一个文件。这个说明针对其代理集合，不代表任何软件的任意导入入口都接受这些形式。</p>
-<p><a href="https://sing-box.sagernet.org/configuration/">sing-box 官方配置说明</a>使用 JSON 配置，并提供配置检查命令。由此不能把另一种配置简单改个扩展名就视为转换完成；桌面客户端怎样生成核心配置，还需要看对应客户端文档。</p>
-<h2 id="heading-1">按四步排查导入</h2>
+<p><code>x64</code>、<code>arm64</code> 标签用于架构识别；文件扩展名还要区分安装包、更新资源与校验文件。签名文件或压缩更新资源不能仅凭名字相似就当成普通安装程序。</p>
+<h2 id="heading-1">按四步完成首次安装核对</h2>
 <ol>
-<li><strong>保存原配置。</strong> 在客户端允许的方式下备份当前可用分组，不覆盖全部节点来试错。</li>
-<li><strong>选对应导出入口。</strong> 在站点账号面板中选择当前客户端官方说明对应的订阅或配置入口，记录入口名称，不只看链接长短。</li>
-<li><strong>区分下载与解析。</strong> 记录更新结果和错误文字。下载成功只能说明取得了内容；若取得登录网页、错误提示或不匹配格式，还不等于配置可用。</li>
-<li><strong>单独验收新分组。</strong> 确认节点已出现、协议和必要信息能被客户端处理，再选一个节点做首次连接和公开页面任务验收。</li>
+<li>在官方安装文档确认操作系统、架构和当前支持条件。</li>
+<li>从该文档指向的正式发布页选择对应文件，私下记录文件名与来源；有官方校验信息时按它核验。</li>
+<li>阅读依赖说明。例如某些包包含额外运行环境，并非所有用户都必须选体积更大的包；按当前官方用途选择。</li>
+<li>先验证程序能启动，再导入自己的订阅，最后检查实际需要的系统代理或网络接管功能。</li>
 </ol>
-<p>需要查看下载内容时，仅在自己控制的本地环境私下检查并按官方方法处理。文件可能含订阅令牌、节点密码或 UUID，不粘贴到公开评论、截图或不可信转换页面。</p>
-<h2 id="heading-2">导入后仍不能连接怎么查</h2>
-<p>“列表出现了节点”是读取层的结果，连接能力还取决于核心对协议及其具体选项的支持。记录客户端与核心实际版本、出错字段和时间，去官方兼容文档核对；不要盲删安全字段，或为了连通关闭证书验证。</p>
-<p>向支持提交最小错误记录即可：客户端名称、实际版本、导出入口名称、发生阶段和已遮盖敏感值的报错。不要用完整配置代替问题说明。</p>
-<h2 id="heading-3">怎样算首次验收完成</h2>
-<p>你应能说明使用的节点协议、返回配置形式与导入入口，并确认新分组没有覆盖原配置、节点可读取、实际任务成功。机场推荐中的“支持某协议”只是兼容核对的一部分，不能替代完整的订阅与客户端验收。</p>
-<h2 id="heading-4">来源与核验日期</h2>
+<p>不要在启动失败时反复换订阅，也不要为绕过架构问题关闭系统的安全检查。</p>
+<h2 id="arm-">Arm 设备能够模拟应用，为什么仍要查组件</h2>
+<p><a href="https://support.microsoft.com/en-us/windows/experience/platform-variants/windows-arm-based-pcs-faq">微软 Windows on Arm FAQ</a>区分了应用兼容与驱动支持。普通应用可以采用相应模拟机制，不代表它依赖的驱动或系统组件也自动兼容。网络接管相关功能，应以项目对该平台的正式支持说明为准。</p>
+<p>因此，“面板能打开”“节点列表出现”“TUN 或其他系统接管可用”“真实网站可访问”，是四个需要分开观察的状态。</p>
+<h2 id="heading-2">怎样算上手验收完成</h2>
+<p>记录设备架构、系统版本、安装文件、程序启动结果、接管方式和真实任务结果。若只在某一组件阶段失败，把该阶段的脱敏错误提交给项目或服务商正式支持，而不是重装整台电脑。机场推荐中的“支持 Windows”仍需细化到你的系统、架构和实际使用方式。</p>
+<h2 id="heading-3">来源与核验日期</h2>
 <ul>
-<li><a href="https://wiki.metacubex.one/en/config/proxy-providers/content/">mihomo：代理集合文件的内容格式</a></li>
-<li><a href="https://sing-box.sagernet.org/configuration/">sing-box：JSON 配置与检查</a></li>
+<li><a href="https://support.microsoft.com/en-us/windows/experience/find-information-about-your-windows-device">微软：查看 Windows 设备信息</a></li>
+<li><a href="https://www.clashverge.dev/install.html">Clash Verge Rev：官方下载安装分类</a></li>
+<li><a href="https://support.microsoft.com/en-us/windows/experience/platform-variants/windows-arm-based-pcs-faq">微软：Windows on Arm 应用与驱动兼容</a></li>
 </ul>
-<p>官方资料核验日期：2026-10-06。文中的表格和流程用于自行检查，不代表本站对某家机场的实测结论。</p>
+<p>官方资料核验日期：2026-10-07。本文提供自行操作与记录的方法，不代表本站对某家机场的实测结论。</p>
 </div>
 <div class="article-likes" data-pagefind-ignore>
 <button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
@@ -135,13 +137,13 @@
 <span id="page-like-label">点赞</span><span id="page-like-count">—</span>
 </button><p id="page-like-message" role="status"></p>
 </div>
-<div class="article-tags" data-pagefind-ignore><a href="https://www.shandianyun.org/tags/airport-basics/"># 机场入门</a><a href="https://www.shandianyun.org/tags/subscription-management/"># 订阅管理</a><a href="https://www.shandianyun.org/tags/troubleshooting/"># 故障排查</a></div>
-<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.shandianyun.org/posts/windows-client-x64-arm64-choice/">← 上一篇</a><a href="https://www.shandianyun.org/posts/password-subscription-credential-check/">下一篇 →</a></nav>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.shandianyun.org/tags/airport-basics/"># 机场入门</a><a href="https://www.shandianyun.org/tags/troubleshooting/"># 故障排查</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><span></span><a href="https://www.shandianyun.org/posts/subscription-format-core-compatibility/">下一篇 →</a></nav>
 <section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
 </article>
 
 <div class="article-rail">
-<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">先分清三层兼容</a><a class="level-2" href="#heading-1">按四步排查导入</a><a class="level-2" href="#heading-2">导入后仍不能连接怎么查</a><a class="level-2" href="#heading-3">怎样算首次验收完成</a><a class="level-2" href="#heading-4">来源与核验日期</a></nav></aside>
+<aside class="toc"><div>本篇目录</div><nav aria-label="文章目录"><a class="level-2" href="#heading">下载之前先记录设备条件</a><a class="level-2" href="#heading-1">按四步完成首次安装核对</a><a class="level-2" href="#arm-">Arm 设备能够模拟应用，为什么仍要查组件</a><a class="level-2" href="#heading-2">怎样算上手验收完成</a><a class="level-2" href="#heading-3">来源与核验日期</a></nav></aside>
 <aside class="ad-slot" aria-label="文章相关内容" data-ad-position="article_sidebar" data-pagefind-ignore><a class="ad-card ad-card-mixed" href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer" aria-label="FlyBit · 文章推荐（在新标签页打开）" data-ad-link>
 <img class="ad-image" src="https://www.shandianyun.org/assets/media/f1048065-aeb8-4802-a266-ebde389104bb.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async">
 <div class="ad-copy"><h3>FlyBit</h3>
@@ -182,7 +184,7 @@
 </div>
 </dialog>
 
-<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/55d24f67-d4de-4e08-bac4-70c21a7598fd/","pageTitle":"支持同一种协议，订阅为何仍导入失败？格式与核心兼容分开核对","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/264df8de-4222-4eba-b924-e6eb36aaf512/","pageTitle":"客户端安装包的 x64 与 arm64 怎么选？新电脑上手核对","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
 
 </body>
 </html>
