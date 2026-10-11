@@ -320,3 +320,19 @@
   .silu-page a, .silu-button, .region-card { transition: none; }
   .silu-button:hover { transform: none; }
 }
+
+/* SEO 文案与正文推广入口：长标题在窄屏自然换行。 */
+.silu-hero .hero-title { flex-wrap: wrap; white-space: normal; font-size: clamp(30px, 6vw, 64px); }
+.silu-reference-note { max-width: 760px; margin: 14px auto 22px; color: var(--muted); font-size: 13px; text-align: center; }
+.silu-guide-promotions { margin: 28px 0; padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--soft); }
+.silu-guide-promotions h2 { margin: 0 0 8px; font-size: 20px; }
+.silu-guide-promotions p { margin: 0 0 16px; color: var(--muted); }
+.silu-guide-promotion-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.silu-guide-promotion-links a { scroll-margin-top: 24px; max-width: 100%; overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .silu-hero .hero-title { font-size: clamp(27px, 7.7vw, 45px); }
+  .silu-page .brand { font-size: 15px; }
+  .silu-reference-note { font-size: 12px; }
+  .silu-guide-promotions { padding: 16px; }
+  .silu-guide-promotion-links { flex-direction: column; }
+}

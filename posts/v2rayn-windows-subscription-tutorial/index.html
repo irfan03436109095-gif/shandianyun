@@ -2,6 +2,7 @@
 <html lang="zh-CN" data-theme="silu-cloud">
 
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理 · 闪电云｜机场推荐与订阅教程</title>
@@ -14,13 +15,38 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="闪电云｜机场推荐与订阅教程">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png"><meta property="og:image:alt" content="闪电云｜机场推荐与订阅教程">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.shandianyun.org/assets/media/c3d652a7-3758-4740-a7a7-3891aee0734e.png"><meta property="og:image:alt" content="v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理">
 <meta name="twitter:description" content="介绍 v2rayN Windows 的官方包选择、订阅分组更新、活动节点选择、系统代理与路由配置，解释节点列表非空却不能联网的常见原因。">
-<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png">
+<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/c3d652a7-3758-4740-a7a7-3891aee0734e.png"><meta name="twitter:image:alt" content="v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理">
 <meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-04T00:25:14&#43;08:00"><meta property="article:modified_time" content="2026-10-04T00:25:36&#43;08:00"><meta property="article:tag" content="订阅管理"><meta property="article:tag" content="v2rayN">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/#article","@type":"BlogPosting","author":{"@type":"Person","name":"闪电云"},"dateModified":"2026-10-04T00:25:36+08:00","datePublished":"2026-10-04T00:25:14+08:00","description":"介绍 v2rayN Windows 的官方包选择、订阅分组更新、活动节点选择、系统代理与路由配置，解释节点列表非空却不能联网的常见原因。","headline":"v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/","@type":"WebPage"},"url":"https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.shandianyun.org/","name":"闪电云｜机场推荐与订阅教程","position":1},{"@type":"ListItem","item":"https://www.shandianyun.org/posts/v2rayn-windows-subscription-tutorial/","name":"v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理","position":2}]}]}</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https:\/\/www.shandianyun.org\/posts\/v2rayn-windows-subscription-tutorial\/#article",
+      "url": "https:\/\/www.shandianyun.org\/posts\/v2rayn-windows-subscription-tutorial\/",
+      "headline": "v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理",
+      "description": "介绍 v2rayN Windows 的官方包选择、订阅分组更新、活动节点选择、系统代理与路由配置，解释节点列表非空却不能联网的常见原因。",
+      "inLanguage": "zh-CN",
+      "author": {"@type": "Person", "name": "闪电云"},
+      "datePublished": "2026-10-04T00:25:14\u002b08:00",
+      "dateModified": "2026-10-04T00:25:36\u002b08:00",
+      "image": ["https:\/\/www.shandianyun.org\/assets\/media\/c3d652a7-3758-4740-a7a7-3891aee0734e.png"],
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https:\/\/www.shandianyun.org\/posts\/v2rayn-windows-subscription-tutorial\/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{"@type": "ListItem", "position": 1, "name": "闪电云｜机场推荐与订阅教程", "item": "https:\/\/www.shandianyun.org\/"}, {"@type": "ListItem", "position": 2, "name": "v2rayN Windows 教程：添加订阅分组、更新节点与设置系统代理", "item": "https:\/\/www.shandianyun.org\/posts\/v2rayn-windows-subscription-tutorial\/"}]
+    }
+  ]
+}
+</script>
+
 
 <script>(()=>{let mode='light';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
 <link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/style.css">
@@ -137,6 +163,7 @@
 <p>正常工作后，再考虑自动更新、额外路由或 TUN。先保存自己的正常配置信息；修改一项后立即验证，有问题就回到上一个可用状态。</p>
 <p>退出前清除不再使用的系统代理。若已经使用 TUN，也应正常停止它。分享日志时遮盖完整订阅地址、UUID、密码和令牌，保留错误类型及发生时间即可。</p>
 </div>
+
 <div class="article-likes" data-pagefind-ignore>
 <button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>

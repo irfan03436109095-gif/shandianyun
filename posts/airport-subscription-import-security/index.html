@@ -2,6 +2,7 @@
 <html lang="zh-CN" data-theme="silu-cloud">
 
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>机场订阅链接使用教程：正确导入、更新与安全重置 · 闪电云｜机场推荐与订阅教程</title>
@@ -14,13 +15,38 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="闪电云｜机场推荐与订阅教程">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png"><meta property="og:image:alt" content="闪电云｜机场推荐与订阅教程">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.shandianyun.org/assets/media/f8daa143-660c-4291-b166-f3e398d5909b.png"><meta property="og:image:alt" content="机场订阅链接使用教程：正确导入、更新与安全重置">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="机场订阅链接使用教程：正确导入、更新与安全重置">
 <meta name="twitter:description" content="把订阅导入拆成获取、解析和连接三个阶段，介绍格式选择、更新验证、常见 HTTP 错误与泄露后的重置步骤，减少盲目换客户端和重复操作。">
-<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png">
+<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/f8daa143-660c-4291-b166-f3e398d5909b.png"><meta name="twitter:image:alt" content="机场订阅链接使用教程：正确导入、更新与安全重置">
 <meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-04T00:25:14&#43;08:00"><meta property="article:modified_time" content="2026-10-04T00:25:29&#43;08:00"><meta property="article:tag" content="订阅管理"><meta property="article:tag" content="隐私保护">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.shandianyun.org/posts/airport-subscription-import-security/#article","@type":"BlogPosting","author":{"@type":"Person","name":"闪电云"},"dateModified":"2026-10-04T00:25:29+08:00","datePublished":"2026-10-04T00:25:14+08:00","description":"把订阅导入拆成获取、解析和连接三个阶段，介绍格式选择、更新验证、常见 HTTP 错误与泄露后的重置步骤，减少盲目换客户端和重复操作。","headline":"机场订阅链接使用教程：正确导入、更新与安全重置","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.shandianyun.org/posts/airport-subscription-import-security/","@type":"WebPage"},"url":"https://www.shandianyun.org/posts/airport-subscription-import-security/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.shandianyun.org/","name":"闪电云｜机场推荐与订阅教程","position":1},{"@type":"ListItem","item":"https://www.shandianyun.org/posts/airport-subscription-import-security/","name":"机场订阅链接使用教程：正确导入、更新与安全重置","position":2}]}]}</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https:\/\/www.shandianyun.org\/posts\/airport-subscription-import-security\/#article",
+      "url": "https:\/\/www.shandianyun.org\/posts\/airport-subscription-import-security\/",
+      "headline": "机场订阅链接使用教程：正确导入、更新与安全重置",
+      "description": "把订阅导入拆成获取、解析和连接三个阶段，介绍格式选择、更新验证、常见 HTTP 错误与泄露后的重置步骤，减少盲目换客户端和重复操作。",
+      "inLanguage": "zh-CN",
+      "author": {"@type": "Person", "name": "闪电云"},
+      "datePublished": "2026-10-04T00:25:14\u002b08:00",
+      "dateModified": "2026-10-04T00:25:29\u002b08:00",
+      "image": ["https:\/\/www.shandianyun.org\/assets\/media\/f8daa143-660c-4291-b166-f3e398d5909b.png"],
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https:\/\/www.shandianyun.org\/posts\/airport-subscription-import-security\/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{"@type": "ListItem", "position": 1, "name": "闪电云｜机场推荐与订阅教程", "item": "https:\/\/www.shandianyun.org\/"}, {"@type": "ListItem", "position": 2, "name": "机场订阅链接使用教程：正确导入、更新与安全重置", "item": "https:\/\/www.shandianyun.org\/posts\/airport-subscription-import-security\/"}]
+    }
+  ]
+}
+</script>
+
 
 <script>(()=>{let mode='light';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
 <link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/style.css">
@@ -144,6 +170,7 @@
 <p>可以提供客户端名称与版本、系统版本、错误时间、更新方式以及简短报错。遮盖完整 URL、二维码、令牌、UUID、密码和个人账户信息。</p>
 <p>将问题描述为“订阅下载成功，但解析报错，节点列表未更新”，会比“机场不能用了”更容易得到有用的答复。先定位阶段，再选择下一步，才能减少反复尝试。</p>
 </div>
+
 <div class="article-likes" data-pagefind-ignore>
 <button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>

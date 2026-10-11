@@ -2,6 +2,7 @@
 <html lang="zh-CN" data-theme="silu-cloud">
 
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>规则、全局、系统代理与 TUN 有什么区别？一张图理清两层设置 · 闪电云｜机场推荐与订阅教程</title>
@@ -14,13 +15,38 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="闪电云｜机场推荐与订阅教程">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png"><meta property="og:image:alt" content="闪电云｜机场推荐与订阅教程">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.shandianyun.org/assets/media/25d563c4-84f1-4cf8-8015-77b84007c3e4.png"><meta property="og:image:alt" content="规则、全局、系统代理与 TUN 有什么区别？一张图理清两层设置">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="规则、全局、系统代理与 TUN 有什么区别？一张图理清两层设置">
 <meta name="twitter:description" content="把系统代理与 TUN 视为流量入口，把规则、全局与直连视为核心分流，说明常见组合、全局测试的边界与浏览器正常但应用失败的排查方法。">
-<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png">
+<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/25d563c4-84f1-4cf8-8015-77b84007c3e4.png"><meta name="twitter:image:alt" content="规则、全局、系统代理与 TUN 有什么区别？一张图理清两层设置">
 <meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-04T00:25:14&#43;08:00"><meta property="article:modified_time" content="2026-10-04T00:25:42&#43;08:00"><meta property="article:tag" content="Clash"><meta property="article:tag" content="故障排查">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://www.shandianyun.org/posts/rule-global-system-proxy-tun-explained/#article","@type":"BlogPosting","author":{"@type":"Person","name":"闪电云"},"dateModified":"2026-10-04T00:25:42+08:00","datePublished":"2026-10-04T00:25:14+08:00","description":"把系统代理与 TUN 视为流量入口，把规则、全局与直连视为核心分流，说明常见组合、全局测试的边界与浏览器正常但应用失败的排查方法。","headline":"规则、全局、系统代理与 TUN 有什么区别？一张图理清两层设置","inLanguage":"zh-CN","mainEntityOfPage":{"@id":"https://www.shandianyun.org/posts/rule-global-system-proxy-tun-explained/","@type":"WebPage"},"url":"https://www.shandianyun.org/posts/rule-global-system-proxy-tun-explained/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.shandianyun.org/","name":"闪电云｜机场推荐与订阅教程","position":1},{"@type":"ListItem","item":"https://www.shandianyun.org/posts/rule-global-system-proxy-tun-explained/","name":"规则、全局、系统代理与 TUN 有什么区别？一张图理清两层设置","position":2}]}]}</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https:\/\/www.shandianyun.org\/posts\/rule-global-system-proxy-tun-explained\/#article",
+      "url": "https:\/\/www.shandianyun.org\/posts\/rule-global-system-proxy-tun-explained\/",
+      "headline": "规则、全局、系统代理与 TUN 有什么区别？一张图理清两层设置",
+      "description": "把系统代理与 TUN 视为流量入口，把规则、全局与直连视为核心分流，说明常见组合、全局测试的边界与浏览器正常但应用失败的排查方法。",
+      "inLanguage": "zh-CN",
+      "author": {"@type": "Person", "name": "闪电云"},
+      "datePublished": "2026-10-04T00:25:14\u002b08:00",
+      "dateModified": "2026-10-04T00:25:42\u002b08:00",
+      "image": ["https:\/\/www.shandianyun.org\/assets\/media\/25d563c4-84f1-4cf8-8015-77b84007c3e4.png"],
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https:\/\/www.shandianyun.org\/posts\/rule-global-system-proxy-tun-explained\/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{"@type": "ListItem", "position": 1, "name": "闪电云｜机场推荐与订阅教程", "item": "https:\/\/www.shandianyun.org\/"}, {"@type": "ListItem", "position": 2, "name": "规则、全局、系统代理与 TUN 有什么区别？一张图理清两层设置", "item": "https:\/\/www.shandianyun.org\/posts\/rule-global-system-proxy-tun-explained\/"}]
+    }
+  ]
+}
+</script>
+
 
 <script>(()=>{let mode='light';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
 <link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/style.css">
@@ -175,6 +201,7 @@
 <p>TUN 涉及系统路由和权限，首次开启后应补测局域网设备、工作网络以及自己的常用应用。若出现问题，先停止 TUN 回到已知可用状态，再对照具体配置。</p>
 <p>理解这两层设置之后，模式选择就不再靠猜：先确认入口，再查看规则，最后核对出口。</p>
 </div>
+
 <div class="article-likes" data-pagefind-ignore>
 <button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
