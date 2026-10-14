@@ -336,3 +336,52 @@
   .silu-guide-promotions { padding: 16px; }
   .silu-guide-promotion-links { flex-direction: column; }
 }
+
+/* 套餐按服务方分行：FlyBit 四列，99吧三列。 */
+.silu-page .silu-plans .plan-grid { gap: 14px; }
+.silu-page .silu-plans .plan-grid-flybit { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.silu-page .silu-plans .plan-grid-99ba { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
+.silu-page .silu-plans .plan-card { padding: 21px 18px 18px; border-radius: 15px; }
+.silu-page .silu-plans .plan-featured { padding: 20px 17px 17px; }
+.silu-page .silu-plans .plan-tier { display: flex; align-items: center; gap: 8px; }
+.silu-page .silu-plans .plan-tier img { width: 26px; height: 26px; flex-shrink: 0; object-fit: contain; border-radius: 6px; margin: 0; }
+.silu-page .silu-plans .plan-card h3 { font-size: 16px; line-height: 1.6; margin: 9px 0 15px; }
+.silu-page .silu-plans .plan-price { font-size: 32px; }
+.silu-page .silu-plans .plan-price > span { font-size: 12px; }
+.silu-page .silu-plans .plan-features { font-size: 12px; margin: 9px 0 14px; }
+.silu-page .silu-plans .plan-features li { margin: 9px 0; padding-left: 17px; }
+.silu-page .silu-plans .plan-coming { padding: 9px 8px; font-size: 11px; }
+
+/* 文章左侧依次显示推广与站内文章索引。正文保留独立滚动。 */
+.silu-page .article-shell { display: grid; max-width: 1240px; grid-template-columns: 250px minmax(0, 1fr); gap: 22px 24px; }
+.silu-page .article-shell > article { grid-column: 2; }
+.silu-page .silu-shell .article-rail { grid-column: 1; min-height: 0; gap: 16px; }
+.silu-page .silu-shell .article-rail > .ad-slot { flex: 0 0 auto; max-height: min(300px, 40vh); }
+.silu-page .article-rail .silu-article-index { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; margin: 0; padding: 17px 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--glass); }
+.silu-article-index h2 { flex-shrink: 0; margin: 0 0 10px; font-size: 14px; font-weight: 700; line-height: 1.6; color: var(--text); }
+.silu-article-index nav { display: flex; flex-direction: column; gap: 4px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.silu-article-index a { display: block; padding: 7px 8px; border-radius: 7px; color: var(--muted); font-size: 12px; line-height: 1.75; overflow-wrap: anywhere; }
+.silu-article-index a:hover, .silu-article-index a[aria-current="page"] { color: var(--accent); background: var(--soft); }
+
+/* 页脚由友链和居中版权组成，友链位于版权上方。 */
+.silu-page .silu-footer { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+.silu-page .silu-footer .friend-links { width: 100%; margin: 0; justify-content: center; gap: 5px 14px; }
+.silu-page .silu-footer .footer-inner { width: 100%; justify-content: center; text-align: center; }
+
+@media (max-width: 980px) {
+  .silu-page .silu-plans .plan-grid-flybit { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .silu-page .article-shell { display: flex; flex-direction: column; max-width: 840px; }
+  .silu-page .article-shell > .breadcrumbs { order: 1; }
+  .silu-page .article-shell > article { order: 2; }
+  .silu-page .silu-shell .article-rail { order: 3; position: static; max-height: none; }
+  .silu-page .silu-shell .article-rail > .ad-slot { max-height: none; overflow: visible; }
+  .silu-page .article-rail .silu-article-index { flex: none; }
+  .silu-article-index nav { max-height: 260px; }
+}
+@media (max-width: 760px) {
+  .silu-page .silu-plans .plan-grid-flybit, .silu-page .silu-plans .plan-grid-99ba { grid-template-columns: minmax(0, 1fr); }
+  .silu-page .silu-plans .plan-card { padding: 22px; }
+  .silu-page .silu-plans .plan-featured { padding: 21px; }
+  .silu-page .silu-plans .plan-card h3 { font-size: 17px; }
+  .silu-page .silu-plans .plan-coming { font-size: 12px; }
+}

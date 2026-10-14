@@ -1,0 +1,6 @@
+/* 桌面侧栏为面包屑、正文留白与固定页脚预留空间。 */
+@media (min-width: 981px) {
+  .silu-page .silu-shell .article-rail {
+    max-height: calc(var(--article-scroll-height, 70vh) - 128px);
+  }
+}
