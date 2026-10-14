@@ -386,9 +386,33 @@
   .silu-page .silu-plans .plan-coming { font-size: 12px; }
 }
 
-/* 套餐标题按机场分组，品牌行居中。 */
-.silu-page .silu-plans .plan-provider-heading { margin: 28px 0 14px; font-size: 17px; font-weight: 700; color: var(--text); }
+/* 两组套餐保留间距，品牌行居中。 */
+.silu-page .silu-plans .plan-grid + .plan-grid { margin-top: 28px; }
 .silu-page .silu-plans .plan-tier { justify-content: center; }
 @media (min-width: 981px) {
   .silu-page .silu-shell .article-rail { max-height: calc(var(--article-scroll-height, 70vh) - 128px); }
+}
+
+/* 首页广告语沿用主题渐变色，桌面醒目，手机保持三个短句并列。 */
+.silu-page .silu-highlights .silu-slogan { margin: 30px auto 8px; max-width: 100%; padding: 0 8px; text-align: center; font-size: clamp(24px, 3.2vw, 38px); font-weight: 800; line-height: 1.55; letter-spacing: .01em; text-wrap: balance; }
+@media (max-width: 760px) {
+  .silu-page .silu-highlights .silu-slogan { margin-top: 24px; padding: 0; }
+}
+
+/* 三个短句保持间距，共用一个渐变背景。 */
+.silu-page .silu-slogan .silu-slogan-gradient { display: inline-block; max-width: 100%; }
+.silu-page .silu-slogan .silu-slogan-phrases { display: flex; justify-content: center; gap: .9em; }
+.silu-page .silu-slogan .silu-slogan-phrases > span { white-space: nowrap; }
+.silu-page .silu-highlights .silu-slogan-caption { max-width: 760px; margin: 6px auto 8px; padding: 0 12px; text-align: center; color: #000; font-size: 14px; font-weight: 400; line-height: 1.8; }
+:root.dark .silu-page .silu-highlights .silu-slogan-caption { color: var(--text); }
+@media (max-width: 760px) {
+  .silu-page .silu-highlights .silu-slogan { font-size: clamp(18px, 6.2vw, 24px); }
+  .silu-page .silu-slogan .silu-slogan-phrases { gap: .55em; }
+  .silu-page .silu-highlights .silu-slogan-caption { padding: 0; font-size: 13px; }
+}
+.silu-page .silu-plans .plan-card h3 { text-align: center; }
+.silu-page .silu-plans > .silu-reference-note { font-size: 11px; line-height: 1.7; }
+.silu-page .silu-footer .friend-links { font-size: 16px; line-height: 1.5; }
+@media (max-width: 760px) {
+  .silu-page .silu-footer .friend-links { font-size: 14px; }
 }
