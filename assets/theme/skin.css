@@ -416,3 +416,39 @@
 @media (max-width: 760px) {
   .silu-page .silu-footer .friend-links { font-size: 14px; }
 }
+
+/* 1.1.6：按首页批注调整标题、说明留白及全部套餐按钮。 */
+.silu-page #service-plans .section-heading h2 {
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.5;
+}
+.silu-page #service-highlights .silu-slogan-caption {
+  max-width: 880px;
+  margin: 56px auto;
+  padding: 0 12px;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 500;
+  line-height: 1.9;
+  text-wrap: balance;
+}
+.silu-page #service-plans a.plan-coming {
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 160px;
+  max-width: 100%;
+  min-height: 44px;
+  margin-inline: auto;
+  padding: 10px 8px;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .silu-page #service-highlights .silu-slogan-caption {
+    margin-block: 40px;
+    padding: 0 8px;
+    font-size: 20px;
+    line-height: 1.85;
+  }
+}
