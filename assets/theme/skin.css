@@ -99,7 +99,7 @@
 .plan-card ul { list-style: none; padding: 0; margin: 0 0 22px; color: var(--muted); font-size: 13px; }
 .plan-card li { margin: 12px 0; }
 .plan-card li::before { content: "—"; margin-right: 9px; color: var(--accent); }
-.plan-coming { display: block; margin-top: auto; padding: 10px 15px; border: 1px solid var(--line); border-radius: 10px; background: var(--soft); color: var(--muted); text-align: center; font-size: 12px; font-weight: 650; }
+.plan-coming { display: block; margin-top: auto; padding: 10px 15px; border: 1px solid var(--line); border-radius: 10px; background: linear-gradient(110deg, #3163e6, #8250dc); border-color: transparent; color: #fff; text-align: center; font-size: 12px; font-weight: 650; }
 .plan-card .plan-features { margin-bottom: 13px; }
 .plan-features li { position: relative; padding-left: 20px; line-height: 1.65; }
 .plan-card .plan-features li::before { position: absolute; left: 0; top: 0; margin: 0; content: "✓"; color: #179b73; font-weight: 750; }
@@ -107,7 +107,7 @@
 .plan-featured, .silu-page .silu-plans .ad-card:nth-child(2) { border: 2px solid #5475ed; padding: 24px 24px 21px; background: var(--surface); box-shadow: 0 10px 34px rgb(76 99 209 / 10%); }
 .plan-featured .plan-tier { color: var(--accent); }
 .plan-featured .plan-coming { background: linear-gradient(110deg, #3163e6, #8250dc); color: #fff; border-color: transparent; }
-.silu-page a.plan-coming:hover { color: var(--accent); border-color: var(--accent); }
+.silu-page a.plan-coming:hover { color: #fff; border-color: transparent; box-shadow: 0 5px 18px rgb(70 97 225 / 22%); }
 .silu-page .plan-featured a.plan-coming:hover { color: #fff; box-shadow: 0 5px 18px rgb(70 97 225 / 22%); }
 .silu-plan-promos { max-width: 960px; margin: 28px auto 0; }
 .silu-plan-promos .ad-slot-wide { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
@@ -340,7 +340,7 @@
 /* 套餐按服务方分行：FlyBit 四列，99吧三列。 */
 .silu-page .silu-plans .plan-grid { gap: 14px; }
 .silu-page .silu-plans .plan-grid-flybit { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.silu-page .silu-plans .plan-grid-99ba { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; }
+.silu-page .silu-plans .plan-grid-99ba { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .silu-page .silu-plans .plan-card { padding: 21px 18px 18px; border-radius: 15px; }
 .silu-page .silu-plans .plan-featured { padding: 20px 17px 17px; }
 .silu-page .silu-plans .plan-tier { display: flex; align-items: center; gap: 8px; }
@@ -384,4 +384,11 @@
   .silu-page .silu-plans .plan-featured { padding: 21px; }
   .silu-page .silu-plans .plan-card h3 { font-size: 17px; }
   .silu-page .silu-plans .plan-coming { font-size: 12px; }
+}
+
+/* 套餐标题按机场分组，品牌行居中。 */
+.silu-page .silu-plans .plan-provider-heading { margin: 28px 0 14px; font-size: 17px; font-weight: 700; color: var(--text); }
+.silu-page .silu-plans .plan-tier { justify-content: center; }
+@media (min-width: 981px) {
+  .silu-page .silu-shell .article-rail { max-height: calc(var(--article-scroll-height, 70vh) - 128px); }
 }
