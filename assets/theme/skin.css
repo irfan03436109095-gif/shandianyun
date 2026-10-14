@@ -423,6 +423,7 @@
   line-height: 1.5;
 }
 .silu-page #service-highlights .silu-slogan-caption {
+  color: var(--muted);
   max-width: 880px;
   margin: 56px auto;
   padding: 0 12px;
