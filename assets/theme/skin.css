@@ -236,7 +236,6 @@
 @media (max-width: 980px) {
   .silu-page .article-shell { grid-template-columns: minmax(0, 1fr); }
   .silu-page .silu-shell .article-rail { position: static; max-height: none; margin-top: 0; }
-  .silu-page .silu-shell .article-rail > .toc { display: none; }
   .silu-page .silu-shell .article-rail > .ad-slot { overflow: visible; max-height: none; }
 }
 @media (max-width: 760px) {
@@ -352,16 +351,16 @@
 .silu-page .silu-plans .plan-features li { margin: 9px 0; padding-left: 17px; }
 .silu-page .silu-plans .plan-coming { padding: 9px 8px; font-size: 11px; }
 
-/* 文章左侧依次显示推广与站内文章索引。正文保留独立滚动。 */
+/* 文章左侧依次显示推广与本篇目录。正文保留独立滚动。 */
 .silu-page .article-shell { display: grid; max-width: 1240px; grid-template-columns: 250px minmax(0, 1fr); gap: 22px 24px; }
 .silu-page .article-shell > article { grid-column: 2; }
 .silu-page .silu-shell .article-rail { grid-column: 1; min-height: 0; gap: 16px; }
 .silu-page .silu-shell .article-rail > .ad-slot { flex: 0 0 auto; max-height: min(300px, 40vh); }
-.silu-page .article-rail .silu-article-index { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; margin: 0; padding: 17px 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--glass); }
-.silu-article-index h2 { flex-shrink: 0; margin: 0 0 10px; font-size: 14px; font-weight: 700; line-height: 1.6; color: var(--text); }
-.silu-article-index nav { display: flex; flex-direction: column; gap: 4px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
-.silu-article-index a { display: block; padding: 7px 8px; border-radius: 7px; color: var(--muted); font-size: 12px; line-height: 1.75; overflow-wrap: anywhere; }
-.silu-article-index a:hover, .silu-article-index a[aria-current="page"] { color: var(--accent); background: var(--soft); }
+.silu-page .silu-shell .article-rail > .silu-article-toc { display: flex; position: static; align-self: stretch; flex-direction: column; flex: 1 1 auto; min-height: 0; max-height: none; overflow: hidden; margin: 0; padding: 17px 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--glass); }
+.silu-article-toc h2 { flex-shrink: 0; margin: 0 0 10px; font-size: 14px; font-weight: 700; line-height: 1.6; color: var(--text); }
+.silu-article-toc nav { display: flex; flex-direction: column; gap: 4px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.silu-article-toc a { display: block; padding: 7px 8px; border-radius: 7px; color: var(--muted); font-size: 12px; line-height: 1.75; overflow-wrap: anywhere; }
+.silu-article-toc a:hover, .silu-article-toc a[aria-current="page"] { color: var(--accent); background: var(--soft); }
 
 /* 页脚由友链和居中版权组成，友链位于版权上方。 */
 .silu-page .silu-footer { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
@@ -373,10 +372,10 @@
   .silu-page .article-shell { display: flex; flex-direction: column; max-width: 840px; }
   .silu-page .article-shell > .breadcrumbs { order: 1; }
   .silu-page .article-shell > article { order: 2; }
-  .silu-page .silu-shell .article-rail { order: 3; position: static; max-height: none; }
+  .silu-page .silu-shell .article-rail { order: 3; position: static; align-self: stretch; width: 100%; max-height: none; }
   .silu-page .silu-shell .article-rail > .ad-slot { max-height: none; overflow: visible; }
-  .silu-page .article-rail .silu-article-index { flex: none; }
-  .silu-article-index nav { max-height: 260px; }
+  .silu-page .silu-shell .article-rail > .silu-article-toc { flex: none; }
+  .silu-article-toc nav { max-height: 260px; }
 }
 @media (max-width: 760px) {
   .silu-page .silu-plans .plan-grid-flybit, .silu-page .silu-plans .plan-grid-99ba { grid-template-columns: minmax(0, 1fr); }
@@ -453,3 +452,11 @@
     line-height: 1.85;
   }
 }
+
+/* 多级标题缩进，无目录且无推广时正文居中。 */
+.silu-article-toc a.level-3 { padding-left: 20px; }
+.silu-article-toc a.level-4 { padding-left: 32px; }
+.silu-article-toc a.level-5 { padding-left: 44px; }
+.silu-article-toc a.level-6 { padding-left: 56px; }
+.silu-page .article-shell[data-has-rail="false"] { max-width: 900px; grid-template-columns: minmax(0, 1fr); }
+.silu-page .article-shell[data-has-rail="false"] > article { grid-column: 1; }
