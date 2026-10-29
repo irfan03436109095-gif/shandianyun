@@ -3,24 +3,26 @@
 
 <head>
 
+
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证 · 闪电云｜机场推荐</title>
-<meta name="description" content="面向首次使用 Clash Verge Rev 的读者，介绍官方安装入口、订阅导入、激活配置、节点选择和系统代理验证，并给出常见失败场景的处理顺序。">
-<meta name="keywords" content="Clash Verge Rev教程,Clash导入订阅,系统代理,Clash节点选择,mihomo">
+<title>Clash Verge Rev 教程：安装、导入订阅与连接排查｜闪电云</title>
+<meta name="description" content="Clash Verge Rev 怎么安装、导入订阅和选节点？按四步完成系统代理与实际连接验证，区分订阅失败、有节点不能用和 TUN 入口问题。">
+<meta name="keywords" content="Clash Verge Rev教程,Clash导入订阅,Clash系统代理,Clash连接失败">
 <meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.shandianyun.org/posts/clash-verge-rev-beginner-tutorial/">
-<meta property="og:title" content="Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证">
-<meta property="og:description" content="面向首次使用 Clash Verge Rev 的读者，介绍官方安装入口、订阅导入、激活配置、节点选择和系统代理验证，并给出常见失败场景的处理顺序。">
+<meta property="og:title" content="Clash Verge Rev 教程：安装、导入订阅与连接排查｜闪电云">
+<meta property="og:description" content="Clash Verge Rev 怎么安装、导入订阅和选节点？按四步完成系统代理与实际连接验证，区分订阅失败、有节点不能用和 TUN 入口问题。">
 <meta property="og:url" content="https://www.shandianyun.org/posts/clash-verge-rev-beginner-tutorial/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="闪电云｜机场推荐">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.shandianyun.org/assets/media/5910a103-c90a-4f38-b740-5477635e6523.png"><meta property="og:image:alt" content="Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证">
+<meta property="og:image" content="https://www.shandianyun.org/assets/media/5910a103-c90a-4f38-b740-5477635e6523.png"><meta property="og:image:alt" content="Clash Verge Rev 教程：安装、导入订阅与连接排查">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证">
-<meta name="twitter:description" content="面向首次使用 Clash Verge Rev 的读者，介绍官方安装入口、订阅导入、激活配置、节点选择和系统代理验证，并给出常见失败场景的处理顺序。">
-<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/5910a103-c90a-4f38-b740-5477635e6523.png"><meta name="twitter:image:alt" content="Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证">
-<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-04T00:25:14&#43;08:00"><meta property="article:modified_time" content="2026-10-04T00:25:33&#43;08:00"><meta property="article:tag" content="订阅管理"><meta property="article:tag" content="Clash">
+<meta name="twitter:title" content="Clash Verge Rev 教程：安装、导入订阅与连接排查｜闪电云">
+<meta name="twitter:description" content="Clash Verge Rev 怎么安装、导入订阅和选节点？按四步完成系统代理与实际连接验证，区分订阅失败、有节点不能用和 TUN 入口问题。">
+<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/5910a103-c90a-4f38-b740-5477635e6523.png"><meta name="twitter:image:alt" content="Clash Verge Rev 教程：安装、导入订阅与连接排查">
+<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-10-04T00:25:14&#43;08:00"><meta property="article:modified_time" content="2026-10-29T23:50:05&#43;08:00"><meta property="article:tag" content="订阅管理"><meta property="article:tag" content="Clash">
 
 <script type="application/ld+json">
 {
@@ -30,18 +32,18 @@
       "@type": "BlogPosting",
       "@id": "https:\/\/www.shandianyun.org\/posts\/clash-verge-rev-beginner-tutorial\/#article",
       "url": "https:\/\/www.shandianyun.org\/posts\/clash-verge-rev-beginner-tutorial\/",
-      "headline": "Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证",
-      "description": "面向首次使用 Clash Verge Rev 的读者，介绍官方安装入口、订阅导入、激活配置、节点选择和系统代理验证，并给出常见失败场景的处理顺序。",
+      "headline": "Clash Verge Rev 教程：安装、导入订阅与连接排查",
+      "description": "Clash Verge Rev 怎么安装、导入订阅和选节点？按四步完成系统代理与实际连接验证，区分订阅失败、有节点不能用和 TUN 入口问题。",
       "inLanguage": "zh-CN",
       "author": {"@type": "Person", "name": "闪电云"},
       "datePublished": "2026-10-04T00:25:14\u002b08:00",
-      "dateModified": "2026-10-04T00:25:33\u002b08:00",
+      "dateModified": "2026-10-29T23:50:05\u002b08:00",
       "image": ["https:\/\/www.shandianyun.org\/assets\/media\/5910a103-c90a-4f38-b740-5477635e6523.png"],
       "mainEntityOfPage": {"@type": "WebPage", "@id": "https:\/\/www.shandianyun.org\/posts\/clash-verge-rev-beginner-tutorial\/"}
     },
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [{"@type": "ListItem", "position": 1, "name": "闪电云｜机场推荐", "item": "https:\/\/www.shandianyun.org\/"}, {"@type": "ListItem", "position": 2, "name": "Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证", "item": "https:\/\/www.shandianyun.org\/posts\/clash-verge-rev-beginner-tutorial\/"}]
+      "itemListElement": [{"@type": "ListItem", "position": 1, "name": "闪电云｜机场推荐", "item": "https:\/\/www.shandianyun.org\/"}, {"@type": "ListItem", "position": 2, "name": "Clash Verge Rev 教程：安装、导入订阅与连接排查", "item": "https:\/\/www.shandianyun.org\/posts\/clash-verge-rev-beginner-tutorial\/"}]
     }
   ]
 }
@@ -73,7 +75,7 @@
 
 <header class="site-header silu-header"><div class="header-inner">
 <a class="brand" href="https://www.shandianyun.org/"><img src="https://www.shandianyun.org/assets/media/4c51e6a5-fc14-4fb0-94c4-d4558e38f56e.png" alt="" width="40" height="40"><span>闪电云｜机场推荐</span></a>
-<nav id="site-navigation" aria-label="站点导航"><a href="https://www.shandianyun.org/">首页</a><a href="https://www.shandianyun.org/#service-plans">服务方案</a><a href="https://www.shandianyun.org/categories/airport-basics-buying/">入门与选购</a><a href="https://www.shandianyun.org/categories/subscription-configuration/">订阅与配置</a><a href="https://www.shandianyun.org/categories/proxy-client-tutorials/">客户端教程</a><a href="https://www.shandianyun.org/categories/speed-troubleshooting/">测速与排障</a><a href="https://www.shandianyun.org/posts/about-us/">关于我们</a></nav>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://www.shandianyun.org/">首页</a><a href="https://www.shandianyun.org/#start-here">使用教程</a><a href="https://www.shandianyun.org/#service-plans">服务方案</a><a href="https://www.shandianyun.org/categories/airport-basics-buying/">入门与选购</a><a href="https://www.shandianyun.org/categories/subscription-configuration/">订阅与配置</a><a href="https://www.shandianyun.org/categories/proxy-client-tutorials/">客户端教程</a><a href="https://www.shandianyun.org/categories/speed-troubleshooting/">测速与排障</a><a href="https://www.shandianyun.org/posts/about-us/">关于我们</a></nav>
 <a class="search-toggle" href="https://www.shandianyun.org/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
 <button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮"><svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 <span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
@@ -83,7 +85,8 @@
 <div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
 <main id="main" tabindex="-1" class="shell silu-shell article-shell" data-has-toc="true" data-has-rail="true">
 
-<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云｜机场推荐</a></li><li><span aria-current="page">Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证</span></li></ol></nav>
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云｜机场推荐</a></li><li><span aria-current="page">Clash Verge Rev 教程：安装、导入订阅与连接排查</span></li></ol></nav>
+
 
 
 
@@ -99,16 +102,15 @@
 <p>探索更多，连接更多可能</p>
 </div>
 </a></aside>
-
 <section class="toc silu-article-toc" aria-labelledby="article-toc-heading"><h2 id="article-toc-heading">本篇目录</h2><nav aria-label="本篇目录" tabindex="0"><a class="level-2" href="#heading">第一步：从官方入口安装</a><a class="level-2" href="#heading-1">第二步：导入适配的订阅</a><a class="level-2" href="#heading-2">第三步：激活配置并选节点</a><a class="level-2" href="#heading-3">第四步：开启系统代理并验证</a><a class="level-2" href="#heading-4">常见问题，分别怎么处理</a><a class="level-2" href="#heading-5">退出前与更新后要做什么</a></nav></section>
-
 </aside>
+
 
 
 <article data-pagefind-body>
 <header class="article-header">
 <div class="eyebrow" data-pagefind-ignore>文章详情</div>
-<h1 data-pagefind-meta="title">Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证</h1>
+<h1 data-pagefind-meta="title">Clash Verge Rev 教程：安装、导入订阅与连接排查</h1>
 <div class="metadata" data-pagefind-ignore><span>闪电云</span><time datetime="2026-10-04T00:25:14&#43;08:00">2026-10-04</time><span><span id="page-views">—</span> 次阅读</span></div>
 <div class="chips" data-pagefind-ignore><a href="https://www.shandianyun.org/categories/proxy-client-tutorials/">客户端教程</a></div>
 </header>
@@ -121,6 +123,7 @@
 <p>进入订阅或配置管理页面，将服务商提供的 Clash / mihomo 兼容订阅地址粘贴到远程导入入口，保存并更新。使用便于识别的名称，例如“日常订阅”，不要在名称中放账户密码或完整链接。</p>
 <p>导入后检查配置卡片、更新时间和节点列表。若更新失败，但旧列表仍在，不能只看节点数量判断。需要阅读这一轮更新的结果；若返回登录页面或不兼容格式，先重新取得正确地址。</p>
 <p>官方文档列出了远程订阅、本地配置及应用链接等导入形式。<a href="https://www.clashverge.dev/guide/profile.html">参考：订阅导入文档</a></p>
+<p>复制、授权和更新报错可对照<a href="/posts/airport-subscription-import-security/">订阅链接导入与失效排查</a>；如果已下载内容但解析失败，继续核对<a href="/posts/subscription-format-core-compatibility/">订阅格式与客户端兼容性</a>。</p>
 <p><img src="https://www.shandianyun.org/assets/media/c80801d7-7533-425e-b4e6-610acbfcba04.png" alt="安装、导入、激活与验证四步流程"></p>
 <h2 id="heading-2">第三步：激活配置并选节点</h2>
 <p>选中刚导入的配置，使其成为当前使用配置，再打开代理或策略组页面。配置可能包含总选择组、自动组和按用途分类的组，组名由配置作者定义，不同服务商不一定相同。</p>
@@ -137,6 +140,7 @@
 </ol>
 <p>完成标准是目标请求成功，并且连接记录符合自己的预期。只看到软件图标、流量数字或一次延迟结果，都不够完整。</p>
 <p>如果某个应用不遵循系统代理，系统代理开关可能影响不到它。此时再评估该应用是否支持手动代理，以及是否需要按官方说明使用 TUN。</p>
+<p>对规则、全局和 TUN 仍有疑问，可先看<a href="/posts/rule-global-system-proxy-tun-explained/">两层代理设置对照</a>。</p>
 <h2 id="heading-4">常见问题，分别怎么处理</h2>
 <table>
 <thead>
@@ -175,10 +179,12 @@
 </tbody>
 </table>
 <p>日志中若出现解析、证书或核心错误，保留简短报错与发生时间，再按类型处理。分享日志前遮盖订阅地址、令牌和节点身份字段。</p>
+<p>需要从网络、账户到节点逐项排查时，使用<a href="/posts/airport-connection-failure-checklist/">连接失败六步清单</a>，每次只改一个条件。</p>
 <h2 id="heading-5">退出前与更新后要做什么</h2>
 <p>停止使用时，通过客户端关闭系统代理和正在使用的 TUN，再退出应用。若异常退出后普通网络不能用，检查系统代理是否还指向已经停止的本地程序。</p>
 <p>更新软件或订阅之后，重新完成一次“目标请求加连接记录”的验证。保留正常工作时的配置名称、模式和节点信息，下一次出现问题时就有可靠的对照。</p>
 </div>
+
 
 <div class="article-likes" data-pagefind-ignore>
 <button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
@@ -199,7 +205,7 @@
 </button>
 </div>
 
-<footer class="site-footer silu-footer"><nav class="friend-links" aria-label="友情链接"><span class="friend-links-label">友情链接</span><a href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="noopener noreferrer">FlyBit</a><a href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="noopener noreferrer">99吧</a><a href="https://t.me/five_91" target="_blank" rel="noopener noreferrer">Telegram联系</a><a href="https://t.me/RouteRadarCN" target="_blank" rel="noopener noreferrer">Telegram频道</a></nav><div class="footer-inner"><span>© 2026 闪电云｜机场推荐</span></div></footer>
+<footer class="site-footer silu-footer"><nav class="friend-links" aria-label="友情链接"><span class="friend-links-label">友情链接</span><a href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer">FlyBit</a><a href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer">99吧</a><a href="https://t.me/five_91" target="_blank" rel="noopener noreferrer">Telegram联系</a><a href="https://t.me/RouteRadarCN" target="_blank" rel="noopener noreferrer">Telegram频道</a></nav><div class="footer-inner"><span>© 2026 闪电云｜机场推荐</span></div></footer>
 
 
 
@@ -220,7 +226,7 @@
 </div>
 </dialog>
 
-<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/3bf7f267-60ca-4ce2-bd26-78bcbd0941ec/","pageTitle":"Clash Verge Rev 入门教程：安装、导入订阅、选节点与首次验证","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/3bf7f267-60ca-4ce2-bd26-78bcbd0941ec/","pageTitle":"Clash Verge Rev 教程：安装、导入订阅与连接排查","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
 
 </body>
 </html>
