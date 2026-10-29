@@ -1,0 +1,28 @@
+/* 压缩图片保留原有尺寸比例，在下载完成前预留空间。 */
+.silu-page .prose img[src$="/fce3c56c-f7d1-452e-9dea-16c2d07d396d.webp"],
+.silu-page .prose img[src$="/019dcb6b-d2f6-45d2-a7ac-5ee4114d738d.png"] { aspect-ratio: 1536 / 1024; }
+.silu-page .prose img[src$="/83e1fdc9-80fe-4043-b2ff-12dbc315ff28.webp"],
+.silu-page .prose img[src$="/192d7708-d121-40d3-be29-e768525e23b9.png"],
+.silu-page .prose img[src$="/1acbb2e8-a883-472c-85ad-b38fc3be0ab2.png"] { aspect-ratio: 1672 / 941; }
+.silu-page .prose img[src$="/99147cbb-307a-4e0a-935e-ddfbefdbdd4c.webp"],
+.silu-page .prose img[src$="/cd50ad46-d8d3-43a7-ae9f-0c8926ffc895.png"] { aspect-ratio: 1672 / 941; }
+.silu-page .prose img[src$="/7cf1ef90-e11c-419b-927a-944f12ec5fbf.webp"],
+.silu-page .prose img[src$="/1fa47c5f-0914-4b1c-a125-30081eece45e.png"] { aspect-ratio: 1536 / 1024; }
+.silu-page .prose img[src$="/5eb90421-b233-4079-aa16-f8990eddd3a7.webp"],
+.silu-page .prose img[src$="/aba6d007-e6c1-40fa-9211-319aff40a63e.png"] { aspect-ratio: 900 / 1631; }
+.silu-page .prose img[src$="/3c4eddb3-200d-405c-ba3b-28b7ac81525b.webp"],
+.silu-page .prose img[src$="/5b12a141-021f-4b32-a589-a00a0ec93fe2.png"] { aspect-ratio: 900 / 1638; }
+.silu-page .prose img[src$="/013f1cde-c247-48c7-a50e-e182310a2fca.webp"],
+.silu-page .prose img[src$="/1e2d633a-1aba-462e-9c5a-86029d71f936.png"] { aspect-ratio: 900 / 1638; }
+.silu-page .prose img[src$="/00cc40b0-ac5a-40b1-8469-d626233ecc20.webp"],
+.silu-page .prose img[src$="/91fb179b-de70-492f-94c8-5916559d5772.png"] { aspect-ratio: 900 / 1638; }
+.silu-page .prose img[src$="/aa34f02f-c6d8-4128-9d0e-5228ef5ec3e7.webp"],
+.silu-page .prose img[src$="/038f0b61-72a4-4d85-96c9-7a203bb677b0.png"] { aspect-ratio: 900 / 1387; }
+.silu-page .prose img[src$="/5ebd43fd-d480-4057-8cf1-b4def70fc51f.webp"],
+.silu-page .prose img[src$="/31539c8a-bd9b-448c-a3e4-a7685ede6313.png"] { aspect-ratio: 900 / 1638; }
+.silu-page .prose img[src$="/14ede750-77c7-4430-94bb-90d8586d8a72.webp"],
+.silu-page .prose img[src$="/dee756fe-8ca8-4423-a70a-d51684eae8d5.png"] { aspect-ratio: 900 / 1394; }
+.silu-page .prose img[src$="/729d36eb-144b-4420-a537-eecf3db204f9.webp"],
+.silu-page .prose img[src$="/71cf0832-6b58-43c7-a590-eab1ea09bd08.png"] { aspect-ratio: 900 / 1394; }
+.silu-comment-status { color: var(--muted); font-size: 14px; }
+.silu-comment-retry { padding: 9px 14px; color: var(--accent); border: 1px solid var(--line); border-radius: 9px; background: var(--surface); cursor: pointer; }
