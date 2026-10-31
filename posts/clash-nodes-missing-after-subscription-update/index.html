@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="silu-cloud">
+
+<head>
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查｜闪电云</title>
+<meta name="description" content="订阅提示更新成功，节点却减少或消失，先核对有效配置、全部节点、策略组筛选和套餐权限。区分改名、被过滤与服务端删除，附恢复和客服记录表。">
+<meta name="keywords" content="Clash节点消失,订阅更新节点没了,代理组筛选,机场订阅更新,配置恢复">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.shandianyun.org/posts/clash-nodes-missing-after-subscription-update/">
+<meta property="og:title" content="Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查｜闪电云">
+<meta property="og:description" content="订阅提示更新成功，节点却减少或消失，先核对有效配置、全部节点、策略组筛选和套餐权限。区分改名、被过滤与服务端删除，附恢复和客服记录表。">
+<meta property="og:url" content="https://www.shandianyun.org/posts/clash-nodes-missing-after-subscription-update/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="闪电云｜机场推荐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.shandianyun.org/assets/media/e9792937-3c1e-4212-9baf-bb8530c29da4.png"><meta property="og:image:alt" content="Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查｜闪电云">
+<meta name="twitter:description" content="订阅提示更新成功，节点却减少或消失，先核对有效配置、全部节点、策略组筛选和套餐权限。区分改名、被过滤与服务端删除，附恢复和客服记录表。">
+<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/e9792937-3c1e-4212-9baf-bb8530c29da4.png"><meta name="twitter:image:alt" content="Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查">
+<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-11-01T01:33:03&#43;08:00"><meta property="article:modified_time" content="2026-11-01T01:33:05&#43;08:00"><meta property="article:tag" content="订阅管理"><meta property="article:tag" content="Clash"><meta property="article:tag" content="故障排查">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https:\/\/www.shandianyun.org\/posts\/clash-nodes-missing-after-subscription-update\/#article",
+      "url": "https:\/\/www.shandianyun.org\/posts\/clash-nodes-missing-after-subscription-update\/",
+      "headline": "Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查",
+      "description": "订阅提示更新成功，节点却减少或消失，先核对有效配置、全部节点、策略组筛选和套餐权限。区分改名、被过滤与服务端删除，附恢复和客服记录表。",
+      "inLanguage": "zh-CN",
+      "author": {"@type": "Person", "name": "闪电云"},
+      "datePublished": "2026-11-01T01:33:03\u002b08:00",
+      "dateModified": "2026-11-01T01:33:05\u002b08:00",
+      "image": ["https:\/\/www.shandianyun.org\/assets\/media\/e9792937-3c1e-4212-9baf-bb8530c29da4.png"],
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https:\/\/www.shandianyun.org\/posts\/clash-nodes-missing-after-subscription-update\/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{"@type": "ListItem", "position": 1, "name": "闪电云｜机场推荐", "item": "https:\/\/www.shandianyun.org\/"}, {"@type": "ListItem", "position": 2, "name": "Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查", "item": "https:\/\/www.shandianyun.org\/posts\/clash-nodes-missing-after-subscription-update\/"}]
+    }
+  ]
+}
+</script>
+
+
+<script>(()=>{let mode='light';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/style.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/search.css"><script defer src="https://www.shandianyun.org/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/skin.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/reader.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/media-layout.css">
+<link rel="icon" href="https://www.shandianyun.org/assets/media/bf8cc2b5-6927-40a4-813f-ec99c7a8e5e8.webp">
+<script defer src="https://www.shandianyun.org/assets/theme/theme.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/reader.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/viewer.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://www.shandianyun.org/assets/theme/interaction-lite.js"></script><script defer src="https://www.shandianyun.org/assets/theme/lazy-comments.js" data-silu-comments data-artalk-src="https://www.shandianyun.org/assets/theme/artalk.js" data-artalk-style="https://www.shandianyun.org/assets/theme/artalk.css"></script>
+
+
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/appearance.css">
+<script defer src="https://www.shandianyun.org/assets/xblog/google-analytics.js" data-xblog-google-analytics="G-YWPWVNXNPZ" data-site-hosts="www.shandianyun.org"></script></head>
+
+<body class="reader-page silu-page article-page">
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header silu-header"><div class="header-inner">
+<a class="brand" href="https://www.shandianyun.org/"><img src="https://www.shandianyun.org/assets/media/bf8cc2b5-6927-40a4-813f-ec99c7a8e5e8.webp" alt="" width="40" height="40"><span>闪电云｜机场推荐</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://www.shandianyun.org/">首页</a><a href="https://www.shandianyun.org/#start-here">使用教程</a><a href="https://www.shandianyun.org/#service-plans">服务方案</a><a href="https://www.shandianyun.org/categories/airport-basics-buying/">入门与选购</a><a href="https://www.shandianyun.org/categories/subscription-configuration/">订阅与配置</a><a href="https://www.shandianyun.org/categories/proxy-client-tutorials/">客户端教程</a><a href="https://www.shandianyun.org/categories/speed-troubleshooting/">测速与排障</a><a href="https://www.shandianyun.org/posts/about-us/">关于我们</a></nav>
+<a class="search-toggle" href="https://www.shandianyun.org/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮"><svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单"><svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+</div></header>
+
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell silu-shell article-shell" data-has-toc="true" data-has-rail="true">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云｜机场推荐</a></li><li><span aria-current="page">Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查</span></li></ol></nav>
+
+
+
+
+<aside class="article-rail" aria-label="推广与本篇目录" data-pagefind-ignore>
+<aside class="ad-slot" aria-label="文章相关内容" data-ad-position="article_sidebar" data-pagefind-ignore><a class="ad-card ad-card-mixed" href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer" aria-label="FlyBit · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.shandianyun.org/assets/media/f1048065-aeb8-4802-a266-ebde389104bb.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async">
+<div class="ad-copy"><h3>FlyBit</h3>
+<p>由此开启，下一程连接</p>
+</div>
+</a><a class="ad-card ad-card-mixed" href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer" aria-label="99吧 · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.shandianyun.org/assets/media/68b90dee-f51c-498b-ab7a-0d8b8ec18529.jpg" alt="99吧 · 文章推荐" loading="lazy" decoding="async">
+<div class="ad-copy"><h3>99吧</h3>
+<p>探索更多，连接更多可能</p>
+</div>
+</a></aside>
+<section class="toc silu-article-toc" aria-labelledby="article-toc-heading"><h2 id="article-toc-heading">本篇目录</h2><nav aria-label="本篇目录" tabindex="0"><a class="level-2" href="#heading">一、先保留更新前后的线索</a><a class="level-2" href="#heading-1">二、确认更新的是哪份订阅，启用的又是哪份</a><a class="level-2" href="#heading-2">三、“全部节点里有”与“当前组里没有”要分开</a><a class="level-2" href="#heading-3">四、检查套餐权限，但别急着再次付款</a><a class="level-2" href="#heading-4">五、出现解析错误时，先保护已有配置</a><a class="level-2" href="#heading-5">六、恢复后不仅要看到节点，还要完成任务</a><a class="level-2" href="#heading-6">七、怎样向客服说清楚“少了哪些”</a><a class="level-2" href="#heading-7">常见问题</a><a class="level-3" href="#heading-8">节点少了是不是服务质量变差？</a><a class="level-3" href="#heading-9">把更新频率调得很高能更快恢复吗？</a><a class="level-3" href="#heading-10">可以一直使用旧配置吗？</a></nav></section>
+</aside>
+
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>文章详情</div>
+<h1 data-pagefind-meta="title">Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查</h1>
+<div class="metadata" data-pagefind-ignore><span>闪电云</span><time datetime="2026-11-01T01:33:03&#43;08:00">2026-11-01</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://www.shandianyun.org/categories/subscription-configuration/">订阅与配置</a><a href="https://www.shandianyun.org/categories/speed-troubleshooting/">测速与排障</a></div>
+</header>
+<div class="prose"><p><strong>Clash订阅更新后节点消失，不一定表示节点全部停运。更新成功、配置生效、节点被策略组展示，以及节点能实际连接，是不同的检查点。</strong> 先查当前配置和完整列表，再判断是否为筛选、改名、权限或服务端内容变化。</p>
+<p>本文以Clash兼容客户端与Mihomo配置概念为例。不同客户端界面、核心版本和服务商订阅方式可能不同，按钮名称以实际版本为准。下文不提供通用“补节点代码”，因为凭空添加节点不能恢复服务端没有授予的权限。</p>
+<p><img src="https://www.shandianyun.org/assets/media/e9792937-3c1e-4212-9baf-bb8530c29da4.png" alt="白底蓝紫色订阅云端、筛选漏斗与节点分组卡片的示意图"></p>
+<h2 id="heading">一、先保留更新前后的线索</h2>
+<p>记录更新时间、客户端版本、当前订阅名称、原来使用的节点与策略组，以及更新后的提示。若仍有可用配置，先保留它的安全备份，不急着删除全部订阅重新导入。</p>
+<p>备份可能包含订阅地址和节点认证信息，应放在受保护的个人位置。不要把完整配置传到公开网盘、论坛或陌生在线转换网站；截图时也要注意二维码、链接参数和账户信息。</p>
+<p>如果你还不清楚打开订阅链接时看到的文本是什么，可先看<a href="https://www.shandianyun.org/posts/subscription-link-garbled-text-explained/">订阅内容、网页和导入地址的区别</a>，避免把网站登录页或报错页面当成有效配置。</p>
+<h2 id="heading-1">二、确认更新的是哪份订阅，启用的又是哪份</h2>
+<p>同一个客户端可能同时存在远程订阅、本地配置和用于测试的副本。更新了甲订阅，但当前启用的是乙配置，就会出现“更新成功却没变化”的观感。先比对名称、更新时间与当前激活状态。</p>
+<p>Clash Verge Rev支持远程订阅和本地配置两类导入方式；它们的来源不同，不能默认本地文件会跟随远程链接自动变化。<a href="https://www.clashverge.dev/guide/profile.html">Clash Verge Rev：订阅导入</a></p>
+<p>确认使用的是与客户端兼容的官方订阅格式，不是账号面板地址，也不是另一款软件的专用配置。导入失败或格式报错的处理，可接着阅读<a href="https://www.shandianyun.org/posts/subscription-format-core-compatibility/">订阅格式与客户端兼容排查</a>。</p>
+<h2 id="heading-2">三、“全部节点里有”与“当前组里没有”要分开</h2>
+<p>策略组并不一定展示所有节点。它可能引用特定节点、代理集合，或使用名称筛选和排除条件。Mihomo文档说明了代理组的引用方式，以及filter、exclude-filter等筛选功能。<a href="https://wiki.metacubex.one/config/proxy-groups/">Mihomo：代理组配置</a></p>
+<p>例如，某组按旧名称中的关键词筛选，服务商更新后改了名称，新节点就可能不再进入该组。这是一个需要检查配置才能确认的推测，不应看到数量减少就自动认定是筛选问题。</p>
+<table>
+<thead>
+<tr>
+<th>看到的情况</th>
+<th>优先核对</th>
+<th>不要立即执行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>完整节点列表仍有，某个组没有</td>
+<td>分组引用、筛选条件、当前选择</td>
+<td>删除全部订阅</td>
+</tr>
+<tr>
+<td>只有原来选中的名称消失</td>
+<td>服务商是否改名、合并或替换</td>
+<td>凭旧名称自行造节点</td>
+</tr>
+<tr>
+<td>所有组数量都减少</td>
+<td>套餐权限与订阅返回内容</td>
+<td>假定所有节点同时跑路</td>
+</tr>
+<tr>
+<td>组只剩直连或拒绝等内置项</td>
+<td>是否引用空集合、配置是否有效</td>
+<td>把内置项当真实机场节点</td>
+</tr>
+<tr>
+<td>显示更新成功但解析报错</td>
+<td>客户端版本与配置兼容</td>
+<td>盲删不认识的字段</td>
+</tr>
+</tbody>
+</table>
+<p>检查时关闭界面上的搜索词或地区筛选，再看完整列表。不要把面板显示过滤与配置中的策略过滤混为一谈，它们可能同时存在。</p>
+<h2 id="heading-3">四、检查套餐权限，但别急着再次付款</h2>
+<p>登录已经确认的服务商面板，核对订单状态、套餐有效期、流量额度和节点权限。试用、月付或不同等级套餐是否提供同一组节点，需要看服务商说明，不能根据旧截图推断。</p>
+<p>如果刚续费或升级，确认面板权益已经变化，再按服务商建议更新订阅。更新地址是否随套餐变更、旧链接是否失效，也应单独确认。订单成功但权限不符，应先提供订单记录给客服，而不是连续购买多个套餐尝试刷新权限。</p>
+<p>只有某个地区或某类线路不再出现时，检查维护公告及具体套餐范围。服务商声明“正在维护”和实际节点恢复是不同信息，恢复后仍需要重做自己的任务。</p>
+<h2 id="heading-4">五、出现解析错误时，先保护已有配置</h2>
+<p>配置格式和内核能力会随版本变化。记录错误字段、软件与内核版本，查看官方说明后再决定更新或回退。回退也要确认安装包来源和配置兼容，不能随意从网盘下载“万能旧版”。</p>
+<p>不要为让订阅更新成功而忽略证书警告；先检查网址、时间和来源。也不要随便把整个远程配置替换成他人模板，模板可能改变DNS、规则和权限范围，新的成功表象不代表原问题已经定位。</p>
+<p>有些服务采用独立代理集合，主配置下载成功不一定代表各集合都已成功获取。若客户端提供对应状态与日志，应分别查看；不熟悉配置结构时，将相关错误文字脱敏后提交支持渠道即可。</p>
+<h2 id="heading-5">六、恢复后不仅要看到节点，还要完成任务</h2>
+<p>选定经过确认的可用配置，在一个普通目标页面上建立新请求，检查所选策略和节点。再测试你真正需要的应用，并记下主用与备用。节点重新出现在列表里，只证明展示恢复，不能代替连接验收。</p>
+<table>
+<thead>
+<tr>
+<th>恢复检查</th>
+<th>通过条件</th>
+<th>记录位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配置来源</td>
+<td>入口与格式符合当前客户端</td>
+<td>个人配置记录</td>
+</tr>
+<tr>
+<td>权益一致</td>
+<td>套餐、期限和权限与订单相符</td>
+<td>面板与订单</td>
+</tr>
+<tr>
+<td>节点展示</td>
+<td>完整列表和实际策略组符合预期</td>
+<td>客户端</td>
+</tr>
+<tr>
+<td>新请求</td>
+<td>能完成测试任务且路径符合预期</td>
+<td>连接记录</td>
+</tr>
+<tr>
+<td>后续更新</td>
+<td>再次正常更新不会覆盖必要自定义项</td>
+<td>配置维护记录</td>
+</tr>
+</tbody>
+</table>
+<p>首次连接的完整验收可以参考<a href="https://www.shandianyun.org/posts/first-connection-three-layer-check/">代理端口、规则与真实任务检查</a>。如果任务仍失败，应按连接问题继续查，而不是只根据节点列表变长宣布修复。</p>
+<h2 id="heading-6">七、怎样向客服说清楚“少了哪些”</h2>
+<p>提供更新前后时间、客户端和内核版本、套餐名称、原节点或策略组名称，以及“完整列表有无”“当前组有无”“是否能连接”三项结果。说明自己是否使用自定义筛选或配置合并，方便对方判断问题发生在哪一层。</p>
+<p>只提供必要的名称与脱敏错误信息，不公开私人订阅链接。需要分享配置片段时，先确认其中没有认证信息，并使用服务商指定的可信支持渠道。</p>
+<h2 id="heading-7">常见问题</h2>
+<h3 id="heading-8">节点少了是不是服务质量变差？</h3>
+<p>数量变化可能来自改名、合并、权限或维护；质量需要通过实际任务和持续记录判断。更多节点也不自动等于更稳定。</p>
+<h3 id="heading-9">把更新频率调得很高能更快恢复吗？</h3>
+<p>不一定。反复更新会重复请求，可能触发限制，也不能修复无效权限或配置错误。按服务商说明与明确的恢复进展再更新。</p>
+<h3 id="heading-10">可以一直使用旧配置吗？</h3>
+<p>旧配置可能暂时可用，也可能包含已撤销凭据或过时规则。可以保留作对照，但应确认当前授权和维护状态，不能把旧文件当成永久可用保证。</p>
+</div>
+
+
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.shandianyun.org/tags/subscription-management/"># 订阅管理</a><a href="https://www.shandianyun.org/tags/clash/"># Clash</a><a href="https://www.shandianyun.org/tags/troubleshooting/"># 故障排查</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.shandianyun.org/posts/flybit-99ba-airport-guide/">← 上一篇</a><a href="https://www.shandianyun.org/posts/subscription-link-garbled-text-explained/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+
+
+</main>
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+<footer class="site-footer silu-footer"><nav class="friend-links" aria-label="友情链接"><span class="friend-links-label">友情链接</span><a href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer">FlyBit</a><a href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer">99吧</a><a href="https://t.me/five_91" target="_blank" rel="noopener noreferrer">Telegram联系</a><a href="https://t.me/RouteRadarCN" target="_blank" rel="noopener noreferrer">Telegram频道</a></nav><div class="footer-inner"><span>© 2026 闪电云｜机场推荐</span></div></footer>
+
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://www.shandianyun.org/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.shandianyun.org/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.shandianyun.org/pagefind/" base-url="https://www.shandianyun.org/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/d13f7502-38d8-4377-b548-4085717c866e/","pageTitle":"Clash订阅更新后节点没了？分组、套餐权限与配置恢复这样查","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
+
+</body>
+</html>
