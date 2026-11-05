@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="silu-cloud">
+
+<head>
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态｜闪电云</title>
+<meta name="description" content="安卓锁屏后机场客户端断线，先观察系统 VPN 状态与真实任务，再核对应用电池限制、始终开启 VPN 和 Wi-Fi/蜂窝切换；不同厂商设置须按设备界面确认。">
+<meta name="keywords" content="安卓机场客户端,锁屏断线,电池限制,VPN状态,订阅排障">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://www.shandianyun.org/posts/android-screen-off-vpn-battery-check/">
+<meta property="og:title" content="安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态｜闪电云">
+<meta property="og:description" content="安卓锁屏后机场客户端断线，先观察系统 VPN 状态与真实任务，再核对应用电池限制、始终开启 VPN 和 Wi-Fi/蜂窝切换；不同厂商设置须按设备界面确认。">
+<meta property="og:url" content="https://www.shandianyun.org/posts/android-screen-off-vpn-battery-check/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="闪电云｜机场推荐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.shandianyun.org/assets/media/07bcfdea-660c-46c9-adbb-04adaa57aac8.webp"><meta property="og:image:alt" content="安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态｜闪电云">
+<meta name="twitter:description" content="安卓锁屏后机场客户端断线，先观察系统 VPN 状态与真实任务，再核对应用电池限制、始终开启 VPN 和 Wi-Fi/蜂窝切换；不同厂商设置须按设备界面确认。">
+<meta name="twitter:image" content="https://www.shandianyun.org/assets/media/07bcfdea-660c-46c9-adbb-04adaa57aac8.webp"><meta name="twitter:image:alt" content="安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态">
+<meta name="author" content="闪电云"><meta property="article:published_time" content="2026-11-06T01:23:35&#43;08:00"><meta property="article:modified_time" content="2026-11-06T01:23:43&#43;08:00"><meta property="article:tag" content="故障排查"><meta property="article:tag" content="客户端配置">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https:\/\/www.shandianyun.org\/posts\/android-screen-off-vpn-battery-check\/#article",
+      "url": "https:\/\/www.shandianyun.org\/posts\/android-screen-off-vpn-battery-check\/",
+      "headline": "安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态",
+      "description": "安卓锁屏后机场客户端断线，先观察系统 VPN 状态与真实任务，再核对应用电池限制、始终开启 VPN 和 Wi-Fi\/蜂窝切换；不同厂商设置须按设备界面确认。",
+      "inLanguage": "zh-CN",
+      "author": {"@type": "Person", "name": "闪电云"},
+      "datePublished": "2026-11-06T01:23:35\u002b08:00",
+      "dateModified": "2026-11-06T01:23:43\u002b08:00",
+      "image": ["https:\/\/www.shandianyun.org\/assets\/media\/07bcfdea-660c-46c9-adbb-04adaa57aac8.webp"],
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https:\/\/www.shandianyun.org\/posts\/android-screen-off-vpn-battery-check\/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{"@type": "ListItem", "position": 1, "name": "闪电云｜机场推荐", "item": "https:\/\/www.shandianyun.org\/"}, {"@type": "ListItem", "position": 2, "name": "安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态", "item": "https:\/\/www.shandianyun.org\/posts\/android-screen-off-vpn-battery-check\/"}]
+    }
+  ]
+}
+</script>
+
+
+<script>(()=>{let mode='light';try{const saved=localStorage.getItem('reader-theme');if(['system','light','dark'].includes(saved))mode=saved}catch{}const root=document.documentElement;root.dataset.colorMode=mode;root.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches))})();</script>
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/style.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/advertisements.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/search.css"><script defer src="https://www.shandianyun.org/assets/theme/search.js"></script>
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/skin.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/viewer.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/reader.css">
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/media-layout.css">
+<link rel="icon" href="https://www.shandianyun.org/assets/media/bf8cc2b5-6927-40a4-813f-ec99c7a8e5e8.webp">
+<script defer src="https://www.shandianyun.org/assets/theme/theme.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/reader.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/viewer.js"></script>
+<script defer src="https://www.shandianyun.org/assets/theme/image-viewer.js"></script>
+
+<script defer src="https://www.shandianyun.org/assets/theme/interaction-lite.js"></script><script defer src="https://www.shandianyun.org/assets/theme/lazy-comments.js" data-silu-comments data-artalk-src="https://www.shandianyun.org/assets/theme/artalk.js" data-artalk-style="https://www.shandianyun.org/assets/theme/artalk.css"></script>
+
+
+<link rel="stylesheet" href="https://www.shandianyun.org/assets/theme/appearance.css">
+<script defer src="https://www.shandianyun.org/assets/xblog/google-analytics.js" data-xblog-google-analytics="G-YWPWVNXNPZ" data-site-hosts="www.shandianyun.org"></script></head>
+
+<body class="reader-page silu-page article-page">
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-header silu-header"><div class="header-inner">
+<a class="brand" href="https://www.shandianyun.org/"><img src="https://www.shandianyun.org/assets/media/bf8cc2b5-6927-40a4-813f-ec99c7a8e5e8.webp" alt="" width="40" height="40"><span>闪电云｜机场推荐</span></a>
+<nav id="site-navigation" aria-label="站点导航"><a href="https://www.shandianyun.org/">首页</a><a href="https://www.shandianyun.org/#start-here">使用教程</a><a href="https://www.shandianyun.org/#service-plans">服务方案</a><a href="https://www.shandianyun.org/categories/airport-basics-buying/">入门与选购</a><a href="https://www.shandianyun.org/categories/subscription-configuration/">订阅与配置</a><a href="https://www.shandianyun.org/categories/proxy-client-tutorials/">客户端教程</a><a href="https://www.shandianyun.org/categories/speed-troubleshooting/">测速与排障</a><a href="https://www.shandianyun.org/posts/about-us/">关于我们</a></nav>
+<a class="search-toggle" href="https://www.shandianyun.org/search/" data-open-dialog="search-dialog" aria-haspopup="dialog" aria-controls="search-dialog" aria-label="搜索" title="搜索"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></a>
+<button id="theme-mode" class="theme-toggle theme-cycle" type="button" aria-label="明暗模式：跟随系统，点击切换为明亮" title="跟随系统 · 点击切换为明亮"><svg class="theme-icon-system" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+<span id="theme-mode-status" class="visually-hidden" role="status" aria-live="polite"></span>
+<button id="menu-toggle" class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="打开菜单" title="打开菜单"><svg class="menu-icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><svg class="menu-icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+</div></header>
+
+<div class="page-viewport article-viewport"><div class="page-scroll article-scroll">
+<main id="main" tabindex="-1" class="shell silu-shell article-shell" data-has-toc="true" data-has-rail="true">
+
+<nav class="breadcrumbs" aria-label="面包屑导航"><ol><li><a href="https://www.shandianyun.org/">闪电云｜机场推荐</a></li><li><span aria-current="page">安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态</span></li></ol></nav>
+
+
+
+
+<aside class="article-rail" aria-label="推广与本篇目录" data-pagefind-ignore>
+<aside class="ad-slot" aria-label="文章相关内容" data-ad-position="article_sidebar" data-pagefind-ignore><a class="ad-card ad-card-mixed" href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer" aria-label="FlyBit · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.shandianyun.org/assets/media/f1048065-aeb8-4802-a266-ebde389104bb.png" alt="FlyBit · 文章推荐" loading="lazy" decoding="async">
+<div class="ad-copy"><h3>FlyBit</h3>
+<p>由此开启，下一程连接</p>
+</div>
+</a><a class="ad-card ad-card-mixed" href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer" aria-label="99吧 · 文章推荐（在新标签页打开）" data-ad-link>
+<img class="ad-image" src="https://www.shandianyun.org/assets/media/68b90dee-f51c-498b-ab7a-0d8b8ec18529.jpg" alt="99吧 · 文章推荐" loading="lazy" decoding="async">
+<div class="ad-copy"><h3>99吧</h3>
+<p>探索更多，连接更多可能</p>
+</div>
+</a></aside>
+<section class="toc silu-article-toc" aria-labelledby="article-toc-heading"><h2 id="article-toc-heading">本篇目录</h2><nav aria-label="本篇目录" tabindex="0"><a class="level-2" href="#-vpn-">安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态</a><a class="level-3" href="#heading">做一组锁屏前后对照</a><a class="level-3" href="#heading-1">只针对该应用检查后台限制</a><a class="level-3" href="#heading-2">资料来源</a></nav></section>
+</aside>
+
+
+
+<article data-pagefind-body>
+<header class="article-header">
+<div class="eyebrow" data-pagefind-ignore>文章详情</div>
+<h1 data-pagefind-meta="title">安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态</h1>
+<div class="metadata" data-pagefind-ignore><span>闪电云</span><time datetime="2026-11-06T01:23:35&#43;08:00">2026-11-06</time><span><span id="page-views">—</span> 次阅读</span></div>
+<div class="chips" data-pagefind-ignore><a href="https://www.shandianyun.org/categories/speed-troubleshooting/">测速与排障</a></div>
+</header>
+<div class="prose"><h2 id="-vpn-">安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态</h2>
+<p>安卓客户端白天正常，手机锁屏一阵后却需要重新连接，不必马上换机场套餐。先区分三件事：系统 VPN 仍是否显示连接、客户端进程是否在后台受限、实际应用任务是否真的失败。Android 官方文档说明，VPN 服务有自己的生命周期；后台应用限制及厂商电池策略也可能影响运行，但不能把所有锁屏问题一概归咎于省电。</p>
+<h3 id="heading">做一组锁屏前后对照</h3>
+<ol>
+<li>保持同一节点和网络，锁屏前打开一个常用网站或进行小流量任务，记录成功时间、系统 VPN 状态和客户端连接状态。</li>
+<li>锁屏一段你通常会遇到问题的时间，再解锁查看系统 VPN 设置与客户端日志。不要只看状态栏图标；重新执行原任务，记下是否首次失败、重试后恢复。</li>
+<li>分别在 Wi-Fi 与蜂窝网络重复一次。若只发生在网络切换时，先核对客户端是否正确恢复连接；若只发生在锁屏后，继续看应用电池设置。</li>
+</ol>
+<p><img src="https://www.shandianyun.org/assets/media/07bcfdea-660c-46c9-adbb-04adaa57aac8.webp" alt="安卓手机锁屏前后对照系统VPN状态、电池限制与实际连接任务"></p>
+<p><em>示意图：锁屏后掉线需把系统状态、后台限制和真实任务分开观察。</em></p>
+<h3 id="heading-1">只针对该应用检查后台限制</h3>
+<p>在系统“应用 → 目标客户端 → 电池”附近查找受限、优化或不受限等选项，实际名称依设备厂商而异。Android 文档指出，手动限制后台活动可能让应用无法按预期工作。可短时间调整该应用设置做单变量试验，观察锁屏后连接是否稳定；若无改善，恢复原设置，以免无谓增加耗电。</p>
+<p>系统“始终开启 VPN”也要按客户端支持情况核对：Android 说明它可在开机后启动 VPN 服务，但连接到实际网关仍由客户端负责。若启用“无 VPN 时阻止连接”，断线期间应用可能完全无法联网，先理解后再改。最终以锁屏后原任务可重复完成、日志与系统状态一致作为验收。</p>
+<h3 id="heading-2">资料来源</h3>
+<ul>
+<li><a href="https://developer.android.com/develop/connectivity/vpn">Android Developers：VPN 服务与始终开启 VPN</a></li>
+<li><a href="https://developer.android.com/topic/performance/background-optimization">Android Developers：Background optimization</a></li>
+</ul>
+<p>资料核验日期：2026-11-06。</p>
+</div>
+
+
+<div class="article-likes" data-pagefind-ignore>
+<button id="page-like" class="like-button" type="button" aria-pressed="false" aria-describedby="page-like-message" disabled>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+<span id="page-like-label">点赞</span><span id="page-like-count">—</span>
+</button><p id="page-like-message" role="status"></p>
+</div>
+<div class="article-tags" data-pagefind-ignore><a href="https://www.shandianyun.org/tags/troubleshooting/"># 故障排查</a><a href="https://www.shandianyun.org/tags/client-config/"># 客户端配置</a></div>
+<nav class="pagination" aria-label="相邻文章" data-pagefind-ignore><a href="https://www.shandianyun.org/posts/subscription-first-flybit-99ba-candidate-guide-202611/">← 上一篇</a><a href="https://www.shandianyun.org/posts/incognito-subscription-download-file-cleanup/">下一篇 →</a></nav>
+<section class="comments-section" data-pagefind-ignore><h2>评论</h2><div id="comments"></div></section>
+</article>
+
+
+</main>
+</div>
+<button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden>
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14M12 20V8m-5 5 5-5 5 5"/></svg>
+</button>
+</div>
+
+<footer class="site-footer silu-footer"><nav class="friend-links" aria-label="友情链接"><span class="friend-links-label">友情链接</span><a href="https://goflybit.com/#/register?code=gPinVG8C" target="_blank" rel="sponsored noopener noreferrer">FlyBit</a><a href="https://99ba.net/#/register?code=sExBbdk9" target="_blank" rel="sponsored noopener noreferrer">99吧</a><a href="https://t.me/five_91" target="_blank" rel="noopener noreferrer">Telegram联系</a><a href="https://t.me/RouteRadarCN" target="_blank" rel="noopener noreferrer">Telegram频道</a></nav><div class="footer-inner"><span>© 2026 闪电云｜机场推荐</span></div></footer>
+
+
+
+<dialog id="search-dialog" class="reader-dialog site-search" aria-labelledby="search-title" data-reader-dialog data-pagefind-ignore>
+<header class="reader-dialog-header"><h2 id="search-title">搜索文章</h2><button class="dialog-close" type="button" data-close-dialog aria-label="关闭搜索" title="关闭搜索">×</button></header>
+<div class="reader-dialog-body">
+
+<div id="site-search-ui" data-module="https://www.shandianyun.org/pagefind/pagefind-component-ui.js" data-stylesheet="https://www.shandianyun.org/pagefind/pagefind-component-ui.css" hidden>
+
+<pagefind-config bundle-path="https://www.shandianyun.org/pagefind/" base-url="https://www.shandianyun.org/" lang="zh-cn" no-worker></pagefind-config>
+<pagefind-input placeholder="搜索文章标题或正文"></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
+</div>
+<p id="search-status" class="search-status" role="status">正在加载搜索…</p>
+<button id="search-retry" class="button" type="button" hidden>重新加载</button>
+
+</div>
+</dialog>
+
+<script id="blog-comments-config" type="application/json">{"comments":true,"likes":true,"locale":"zh-CN","pageKey":"/p/a6a36660-030c-4655-ab62-7118f4b42515/","pageTitle":"安卓锁屏后机场连接断断续续？先核对电池限制与 VPN 状态","server":"https://upfqpobmiewm.sealosgzg.site","site":"xblog-59dc91c5-f916-4e6e-85f6-b65b5424c786","views":true,"viewsBase":0}</script>
+
+</body>
+</html>
